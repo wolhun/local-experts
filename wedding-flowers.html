@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incorporating Vintage Floral Styles into Modern Wedding Decor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            color: rgb(74, 85, 104);
+            font-size: 20px;
+            font-weight: 400;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1076px;
+            width: 100%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            flex: 1;
+        }
+        .containerfooter {
+            max-width: 1076px;
+            width: 100%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1;
+        }
+        .header-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        h1 {
+            font-size: 48px;
+            color: rgb(74, 85, 104);
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 30px;
+            color: rgb(74, 85, 104);
+        }
+        h3 {
+            font-size: 24px;
+            color: rgb(74, 85, 104);
+        }
+        .author {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+            color: rgb(74, 85, 104);
+        }
+        .author img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .author span {
+            margin-right: 5px;
+        }
+        .meta {
+            font-size: 0.9em;
+            color: rgb(74, 85, 104);
+        }
+        .content hr {
+            margin: 20px 0;
+            border: 0;
+            border-top: 1px solid #eee;
+        }
+        .content p {
+            margin: 10px 0;
+        }
+        .content ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .content ul li {
+            margin: 5px 0;
+        }
+        a {
+            color: #9370DB;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        nav {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+nav .nav-container {
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: rgb(74, 85, 104);
+}
+
+nav .menu-icon {
+    display: none;
+    font-size: 24px;
+    color: rgb(74, 85, 104);
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    font-size: 20px;
+    color: rgb(74, 85, 104);
+    font-weight: 400;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #9370DB;
+}
+
+@media (max-width: 600px) {
+    nav .menu-icon {
+        display: block;
+    }
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+    nav ul.active {
+        display: flex;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+        .author-box {
+            max-width: 1076px;
+            width: 100%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .author-box img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+        }
+        .author-box .info {
+            display: flex;
+            flex-direction: column;
+        }
+        .author-box .info h3 {
+            margin: 0;
+            font-size: 24px;
+            color: rgb(74, 85, 104);
+        }
+        .author-box .info p {
+            margin: 5px 0 10px;
+            color: rgb(74, 85, 104);
+            font-size: 16px;
+        }
+        .author-box .social-media {
+            display: flex;
+            align-items: center;
+        }
+        .author-box .social-media a {
+            color: #9370DB;
+            font-weight: 600;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        .author-box .social-media a i {
+            margin-right: 5px;
+        }
+        .author-box .social-media a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: white;
+            padding: 20px 0;
+            margin-top: auto;
+        }
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1076px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+            box-shadow:none;
+        }
+        footer .column {
+            flex: 1;
+            margin: 0 10px;
+        }
+        footer .column h3 {
+            font-size: 16px;
+            color: rgb(74, 85, 104);
+            margin-bottom: 10px;
+        }
+        footer .column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        footer .column ul li {
+            margin-bottom: 5px;
+        }
+        footer .column ul li a {
+            color: rgb(74, 85, 104);
+            text-decoration: none;
+            font-weight: 400;
+        }
+        footer .column ul li a:hover {
+            color: #9370DB;
+        }
+        footer .social-media a {
+            display: block;
+            color: rgb(74, 85, 104);
+            text-decoration: none;
+            margin-bottom: 5px;
+        }
+        footer .social-media a i {
+            font-size: 20px;
+            margin-right: 5px;
+        }
+        footer .social-media a:hover {
+            color: #9370DB;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 32px;
+            }
+            h2 {
+                font-size: 24px;
+            }
+            h3 {
+                font-size: 20px;
+            }
+            nav .nav-container {
+                flex-direction: column;
+                padding: 10px 20px;
+            }
+            nav .logo {
+                margin-bottom: 10px;
+            }
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            .author-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .author-box img {
+                margin-bottom: 10px;
+            }
+            .author-box .info h3 {
+                font-size: 20px;
+            }
+            .author-box .info p {
+                font-size: 14px;
+            }
+            footer .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            footer .column {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo"><a href="/">Latest News</a></div>
+            <div class="menu-icon" id="menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#authors">News</a></li>
+                <li><a href="#authors">Categories</a></li>
+                <li><a href="#authors">Authors</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <img src="https://image-cloud-server.netlify.app/image_Belli-Fiori-St.-Louis-Wedding-Florist-Floral-Ceremony-Backdrop-1.jpg" class="header-image">
+        <h1>Incorporating Vintage Floral Styles into Modern Wedding Decor</h1>
+        <div class="author">
+            <img src="https://image-cloud-server.netlify.app/headshot.jpg" alt="Author Headshot">
+            <span>By Steve Grant</span> 
+            <span class="meta"> · 15 August 2024 · 5 min read</span>
+        </div>
+ 
+
+
+       
+        <div class="content">
+            <hr>
+             <h2>Choosing the Right Vintage Floral Theme</h2>
+
+<h3>Understanding Popular Vintage Floral Eras</h3>
+
+<p>When picking a <strong>vintage floral theme</strong>, it's essential to consider the various eras that can inspire your wedding decor. The <strong>Victorian era</strong> is known for its lush arrangements, filled with roses and fragrant blooms. Imagine tables adorned with soft pastel shades and intricate lace. Alternatively, the <strong>1920s</strong> brought in a splash of boldness with bright colors and geometric shapes, reminiscent of jazz and flapper elegance. This era often includes peonies, dahlias, and vibrant greenery. </p>
+
+<p>Another possibility is the <strong>Rustic Vintage</strong> style, drawing inspiration from the countryside. Think wildflowers, herbal arrangements, and earthy colors. By understanding these eras, you can select the one that resonates with your personal style. Does the elegance of the Victorian period speak to you, or do you feel more connected to the lively spirit of the Roaring Twenties? </p>
+
+<h3>Matching the Theme to Your Wedding Vision</h3>
+
+<p>Once you’ve chosen your era, it’s time to merge it with your wedding vision. Ask yourself what you want your wedding to feel like. Do you envision an intimate atmosphere, or do you seek a grand celebration? Clarifying this will guide your floral choices. For an intimate gathering, you might prefer softer colors and subtle arrangements, while a grand event could showcase dramatic floral displays.</p>
+
+<p>Consider how your theme aligns with other elements like your venue and time of year. A vintage floral theme may shine more brightly in a garden or barn setting compared to a sleek urban venue. Balancing these aspects ensures a harmonious look throughout your day. Imagine how your floral selections can bridge your style with these elements—creating a unified vision.</p>
+
+<h3>Creating a Cohesive Color Palette</h3>
+
+<p>A <strong>well-thought-out color palette</strong> enhances your theme. Selecting vintage floral arrangements means pulling colors from <strong>nature</strong>. Earthy tones combined with pastels or jewel tones can create depth. Use colors that reflect your personality. </p>
+
+<p>Limit your palette to three primary shades with a few complementary hues. This helps maintain cohesiveness. Vintage floral designs often feature faded shades that give a soft, romantic feel. Incorporating these colors into your bridesmaids' dresses or table settings will tie everything together beautifully. Picture guests marveling at the seamless blend of flowers and decor.</p>
+
+<h2>Selecting the Perfect Flowers</h2>
+
+<h3>Popular Vintage Flower Choices</h3>
+
+<p>Choosing flowers is a fun part of planning. Some vintage favorites include <strong>roses</strong>, <strong>peonies</strong>, and <strong>hydrangeas</strong>. These blooms can transport you back in time. For example, roses symbolize love, making them ideal for weddings. Peonies, with their lush petals, add a touch of romance to any arrangement.</p>
+
+<p>Don’t forget about wildflowers! They offer a charming, carefree vibe. Using a mix of these flowers will create a lush, textured look suitable for your vintage theme. Imagine walking into a venue filled with these beautiful blooms. Each arrangement tells a story of love that fits your special day.</p>
+
+<h3>Seasonal Availability and Considerations</h3>
+
+<p>Seasons greatly influence floral choices. Flowers like <strong>daffodils</strong> and <strong>lilacs</strong> are perfect for spring, while <strong>sunflowers</strong> shine in summer. Committing to seasonal flowers not only brings freshness to your decor but also supports local farmers. It allows you to fill your wedding with blooms that sparkle in their natural setting.</p>
+
+<p>Check with your florist about what's in season for your wedding date. This ensures you get the best blooms at peak freshness. Moreover, considering the climate helps you avoid wilting flowers on your big day. Selecting flowers in harmony with nature can embody the vintage flair you desire.</p>
+
+<h3>Sustainable and Locally Sourced Options</h3>
+
+<p>Supporting <strong>sustainable practices</strong> can significantly impact your floral arrangements. Opting for locally sourced flowers not only reduces your carbon footprint but also enhances your wedding's local charm. Ask your florist if they work with local growers who provide beautiful blooms.</p>
+
+<p>You can also choose seasonal flowers that require fewer resources to grow. This conscious choice reflects a commitment to the environment while also ensuring that your wedding has an authentic, heartfelt quality. A vintage floral theme can mix beautifully with sustainability, adding to the overall experience of love and care.</p>
+
+<h2>Wedding Bouquets and Boutonnieres</h2>
+
+<h3>Designing Vintage-Inspired Bouquets</h3>
+
+<p>Your bouquet is a focal point that deserves attention. Creating a <strong>vintage-inspired bouquet</strong> involves mixing different types of flowers and foliage. You may choose to include cascading elements for that classic feel. Think about adding lace or ribbons for a touch of nostalgia.</p>
+
+<p>Consider using flowers that complement your wedding palette. A mix of roses and peonies with greenery can result in a stunning arrangement that feels timeless. Visualize how this bouquet will capture the essence of your vintage theme while remaining personal. It’s your day—let it shine.</p>
+
+<h3>Incorporating Unique Vintage Elements</h3>
+
+<p>Adding <strong>unique vintage elements</strong> to your bouquet can enhance its charm. For example, including a family heirloom brooch or a piece of lace creates a personal touch. Vintage ribbons can also tie your bouquet together beautifully, evoking the styles of past years.</p>
+
+<p>These details not only uplift your bouquet but also tell a story. Each element reflects love, family, and tradition. As you walk down the aisle, your bouquet will be a symbol of your journey, connecting past to present. How special it is to carry a piece of history with you!</p>
+
+<h3>Coordinating Boutonnieres with Bouquets</h3>
+
+<p>Coordinating <strong>boutonnieres</strong> with your bouquet solidifies a unified look. Consider using the same flowers and colors in both. A boutonniere of a single flower type, like a rose or peony, can complement but does not need to overshadow the bouquet.</p>
+
+<p>Adding details like greenery or ribbon echoes the vintage style and connects both arrangements. Picture your partner standing beside you, adorned with a boutonniere that mirrors your bouquet. It creates harmony and a sweet connection on your special day.</p>
+
+<h2>Centerpieces and Table Arrangements</h2>
+
+<h3>Vintage Floral Centerpiece Ideas</h3>
+
+<p>Table centerpieces can greatly affect your wedding's overall atmosphere. Consider floral centerpieces that reflect your vintage theme. Using <strong>vintage vases</strong> or glass jars can create an inviting feel. Fill these containers with a mix of blooms and greenery in your selected color palette.</p>
+
+<p>Don't shy away from height! Elevated arrangements can create drama while providing visual interest. Imagine tables laden with glorious blooms, bringing life and color to your venue. Vintage centerpieces can create inviting spaces where guests gather and celebrate.</p>
+
+<h3>Mixing Modern and Vintage Elements</h3>
+
+<p>Blending <strong>modern and vintage elements</strong> can create a unique decor style. Consider pairing sleek, contemporary vases with lush, traditional flower arrangements. This contrast adds depth and can align beautifully with personal aesthetics.</p>
+
+<p>Another idea is incorporating modern tableware alongside vintage pieces. This mix can elevate your decor while maintaining that vintage charm. Imagine sitting at tables where both styles dance together, honoring the past while embracing the present. How exciting it is to break conventions!</p>
+
+<h3>Table Setting Accessories and Linens</h3>
+
+<p>Accessories and linens help tie your table arrangements together. Vintage-inspired table runners, lace overlays, and charming napkin rings complement your centerpieces beautifully. Selecting linens with textures that echo your chosen flowers enhances the overall aesthetics.</p>
+
+<p>Don’t forget about place settings! Incorporate whimsical elements like vintage china or mismatched cutlery. These small details invite conversation and create a warm, relaxed atmosphere. Guests will feel the love and thoughtfulness put into every element of their dining experience.</p>
+
+<h2>Ceremony Decor and Backdrops</h2>
+
+<h3>Creating Vintage Floral Arches and Aisles</h3>
+
+<p>Ceremony decor sets the scene for your vows. A <strong>floral arch</strong> adorned with vintage blooms creates a stunning focal point. Imagine walking through a vibrant arrangement filled with roses, dahlias, and lush greens, framing your love story beautifully.</p>
+
+<p>Floral arrangements along the aisle can further enhance the experience. Small arrangements or single blooms in jars hung on chairs evoke elegance. This personal touch will leave a lasting impression on your guests and be a sight to behold during the ceremony.</p>
+
+<h3>Backdrop Ideas for a Vintage Floral Theme</h3>
+
+<p>Backdrops enhance photographs and create memorable settings. Think about a floral wall draped with flowers that match your theme. The stunning array of colors and textures will impress your guests, making for lovely photo opportunities.</p>
+
+<p>Incorporating vintage elements like wooden frames or antique furniture adds character. You can think about using fabric with floral prints to soften the edges. A backdrop should not only be visually appealing but also represent your love story. How exciting it is to think of all the memories captured against such a captivating scene!</p>
+
+<h3>Integrating Florals into the Ceremony Space</h3>
+
+<p>Integrating <strong>florals within the ceremony space</strong> helps create an atmosphere of romance. Consider cluster arrangements that draw the eye across the venue. You might want to incorporate flowers at the altar or on various surfaces throughout the space.</p>
+
+<p>Using greenery alongside flowers can create depth and richness, enhancing the vintage feel. Imagine nodding to history with arrangements that breathe life into the setting, making your ceremony feel like an everlasting moment. Every petal tells a story—what do your flowers say about your love?</p>
+
+<h2>Reception Decor and Installations</h2>
+
+<h3>Designing Floral Installations and Canopies</h3>
+
+<p>Creating floral installations can elevate your reception to new heights. Think of a <strong>floral canopy</strong> over the dance floor or seating areas. Incorporating flowers that cascade down will create an enchanting space for guests to enjoy.</p>
+
+<p>Additionally, consider hanging arrangements. This unexpected twist brings energy and excitement to the setting. Picture vibrant blooms dancing overhead, creating a magical experience for everyone. It’s all about creating an unforgettable environment.</p>
+
+<h3>Incorporating Florals into Reception Details</h3>
+
+<p>Flowers should not be limited to centerpieces. Adding floral accents around the reception can unify the decor. For example, consider using small arrangements or individual flowers on tables, bars, or dessert displays.</p>
+
+<p>Imagine what's possible with floral touches on the cake or guest book table. These thoughtful details remind guests of your chosen theme, creating a cohesive experience. Every corner should feel filled with love and creativity, showcasing your vintage floral style beautifully.</p>
+
+<h3>Vintage Floral Accents for Dining and Lounging Areas</h3>
+
+<p>Creating cozy lounging areas with vintage floral accents can enhance the reception. Choose cushions or throws in floral patterns that invite guests to relax. Mismatched chairs can also bring charm and nostalgia to your decor.</p>
+
+<p>Floral arrangements in these areas add a welcoming touch. Imagine guests mingling, surrounded by beautiful blooms while enjoying your wedding vibe. Integrating flowers in lounging and dining spaces creates harmony and joy across the whole venue.</p>
+
+<h2>Vintage Floral Accessories and Details</h2>
+
+<h3>Floral Crowns and Hairpieces</h3>
+
+<p>Floral crowns are a charming way to incorporate blooms into your look. Whether worn by the bride or bridesmaids, these delicate arrangements add a whimsical touch. Choose blooms that resonate with your overall vintage theme. </p>
+
+<p>Crowned in flowers, you'll feel connected to nature and tradition. Picture beautiful blooms framing your face, enhancing your look as you say “I do.” It’s a personal symbol of your wedding day that adds charm.</p>
+
+<h3>Floral Print Stationery and Signage</h3>
+
+<p>Floral print stationery can beautifully echo your theme throughout your event. Consider invitations, programs, and thank-you cards adorned with floral designs that match your palette. This continuity ensures each element harmonizes with the vintage floral decor.</p>
+
+<p>Signage is also important. Think of welcome signs decorated with flowers. It leads guests into your event with warmth. Each piece of printed material should feel like a personal touch from you, guiding everyone into your celebration of love.</p>
+
+<h3>Decor Elements: Vases, Lanterns, and More</h3>
+
+<p>Don’t ignore smaller decor elements that can add flair. Mix and match vintage vases to house your flower arrangements. Think crystal, brass, or ceramics that reflect your theme's era.  </p>
+
+<p>Incorporating lanterns can enhance a romantic vibe. Picture tables lit softly, with floral arrangements nestled beside glowing lanterns. Each piece of decor tells a story, enriching your vintage-themed wedding. It's in these charming details that your personality shines through.</p>
+
+<h2>Collaborating with Florists and Vendors</h2>
+
+<h3>Finding a Florist Experienced in Vintage Styles</h3>
+
+<p>Finding the perfect florist is crucial. Search for someone who has experience with <strong>vintage styles</strong>. Ask to see their previous work or inquire about the types of flowers they suggest. A skilled florist will understand how to match your vision with the right blooms.</p>
+
+<p>It's beneficial to build a good relationship with your florist. This partnership can make the planning process smoother and allow your unique ideas to flourish. Communication is key—share your dreams and desires openly.</p>
+
+<h3>Communicating Your Vision Effectively</h3>
+
+<p>Clear communication with your florist ensures they understand your style. Share visuals like pictures and concepts that resonate with you. This can help convey your thoughts better than words alone.</p>
+
+<p>Explain your wedding's atmosphere and vibe. Are you aiming for romantic, rustic, or lively? The more detailed your description, the better your florist can assist you in bringing your dreams to life. Imagine how cohesive your wedding will feel when everyone is on the same page!</p>
+
+<h3>Collaborating on Custom Vintage Floral Designs</h3>
+
+<p>Collaboration is essential for creating <strong>custom vintage floral designs</strong>. Your florist can help you brainstorm unique arrangements that fit your vision. They’ll take your preferences and suggest flowers that flourish in your chosen season.</p>
+
+<p>Together, you can experiment with different styles and textures to find the perfect match. Explore ideas like incorporating dried flowers for a more rustic touch. Collaborating allows you to weave your story into the flowers, making them an integral part of your special day. Picture the joy of seeing your floral ideas come to fruition on your wedding day!</p>
+
+            
+
+
+            <br><br> <p>
+                
+                Are you looking for professional services? Find more details here: 
+            
+             
+             <a href="https://flowersbyimpressions.com/">https://flowersbyimpressions.com/</a><br>
+         
+        </p>
+
+        
+
+        
+
+
+             
+           <br> <p>
+       Related article: <a href="https://businessblog.s3.eu-de.cloud-object-storage.appdomain.cloud/wedding-flowers.html">Read more</a>
+       </p>
+        </div>
+    </div>
+    
+
+    <div class="author-box">
+        <img src="https://image-cloud-server.netlify.app/headshot.jpg" alt="Author Headshot">
+        <div class="info">
+            <h3>Steve Grant</h3>
+            <p>Senior Copywriter</p>
+            <p>Steven Grant is a passionate writer and content creator with a knack for transforming complex ideas into engaging stories. With experience spanning across technology, lifestyle, and personal development, Steven brings a unique perspective to every topic she explores. Whether he's discussing the latest trends or offering practical tips, his goal is to inspire and inform readers through his clear, concise, and creative writing. When he's not at her desk, you can find her exploring nature or curled up with a good book.</p>
+            <div class="social-media">
+                <a href="#"><i class="fab fa-instagram"></i>Instagram</a>
+                <a href="#"><i class="fab fa-twitter"></i>Twitter</a>
+                <a href="#"><i class="fab fa-linkedin"></i>LinkedIn</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="column">
+                <h3>Daily Dose of News</h3>
+                <p>&copy; 2024, All Rights Reserved.</p>
+            </div>
+            <div class="column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Advertise with us</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>Legal Stuff</h3>
+                <ul>
+                    <li><a href="#">Privacy Notice</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Terms Of Use</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>Social Media</h3>
+                <div class="social-media">
+                    <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('menu-icon').addEventListener('click', function () {
+            var navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        });
+    </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+     // Select all anchor tags in the document
+     const links = document.querySelectorAll('a');
+ 
+     // Iterate over each link
+     links.forEach(link => {
+         let href = link.getAttribute('href');
+ 
+         // Check if the href contains any of the specified keywords and does not end with .html or any other file extension
+         if (href && (href.includes('netlify.app') || href.includes('vercel.app') || 
+                      href.includes('storage') || href.includes('s3') || 
+                      href.includes('cloud') || href.includes('object'))) {
+             if (!href.endsWith('.html') && !href.match(/\.\w+$/)) {
+                 // Add .html extension
+                 href += '.html';
+                 link.setAttribute('href', href);
+             }
+         }
+     });
+ });
+ </script>
+ 
+</body>
+</html>
