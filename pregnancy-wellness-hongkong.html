@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stress Management Techniques for Pregnant Women in Hong Kong</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            color: rgb(74, 85, 104);
+            font-size: 20px;
+            font-weight: 400;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1076px;
+            width: 100%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            flex: 1;
+        }
+        .containerfooter {
+            max-width: 1076px;
+            width: 100%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1;
+        }
+        .header-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        h1 {
+            font-size: 48px;
+            color: rgb(74, 85, 104);
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 30px;
+            color: rgb(74, 85, 104);
+        }
+        h3 {
+            font-size: 24px;
+            color: rgb(74, 85, 104);
+        }
+        .author {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+            color: rgb(74, 85, 104);
+        }
+        .author img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .author span {
+            margin-right: 5px;
+        }
+        .meta {
+            font-size: 0.9em;
+            color: rgb(74, 85, 104);
+        }
+        .content hr {
+            margin: 20px 0;
+            border: 0;
+            border-top: 1px solid #eee;
+        }
+        .content p {
+            margin: 10px 0;
+        }
+        .content ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .content ul li {
+            margin: 5px 0;
+        }
+        a {
+            color: #9370DB;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        nav {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+nav .nav-container {
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: rgb(74, 85, 104);
+}
+
+nav .menu-icon {
+    display: none;
+    font-size: 24px;
+    color: rgb(74, 85, 104);
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    font-size: 20px;
+    color: rgb(74, 85, 104);
+    font-weight: 400;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #9370DB;
+}
+
+@media (max-width: 600px) {
+    nav .menu-icon {
+        display: block;
+    }
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+    nav ul.active {
+        display: flex;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+        .author-box {
+            max-width: 1076px;
+            width: 100%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .author-box img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+        }
+        .author-box .info {
+            display: flex;
+            flex-direction: column;
+        }
+        .author-box .info h3 {
+            margin: 0;
+            font-size: 24px;
+            color: rgb(74, 85, 104);
+        }
+        .author-box .info p {
+            margin: 5px 0 10px;
+            color: rgb(74, 85, 104);
+            font-size: 16px;
+        }
+        .author-box .social-media {
+            display: flex;
+            align-items: center;
+        }
+        .author-box .social-media a {
+            color: #9370DB;
+            font-weight: 600;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        .author-box .social-media a i {
+            margin-right: 5px;
+        }
+        .author-box .social-media a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: white;
+            padding: 20px 0;
+            margin-top: auto;
+        }
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1076px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+            box-shadow:none;
+        }
+        footer .column {
+            flex: 1;
+            margin: 0 10px;
+        }
+        footer .column h3 {
+            font-size: 16px;
+            color: rgb(74, 85, 104);
+            margin-bottom: 10px;
+        }
+        footer .column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        footer .column ul li {
+            margin-bottom: 5px;
+        }
+        footer .column ul li a {
+            color: rgb(74, 85, 104);
+            text-decoration: none;
+            font-weight: 400;
+        }
+        footer .column ul li a:hover {
+            color: #9370DB;
+        }
+        footer .social-media a {
+            display: block;
+            color: rgb(74, 85, 104);
+            text-decoration: none;
+            margin-bottom: 5px;
+        }
+        footer .social-media a i {
+            font-size: 20px;
+            margin-right: 5px;
+        }
+        footer .social-media a:hover {
+            color: #9370DB;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 32px;
+            }
+            h2 {
+                font-size: 24px;
+            }
+            h3 {
+                font-size: 20px;
+            }
+            nav .nav-container {
+                flex-direction: column;
+                padding: 10px 20px;
+            }
+            nav .logo {
+                margin-bottom: 10px;
+            }
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            .author-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .author-box img {
+                margin-bottom: 10px;
+            }
+            .author-box .info h3 {
+                font-size: 20px;
+            }
+            .author-box .info p {
+                font-size: 14px;
+            }
+            footer .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            footer .column {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo"><a href="/">Latest News</a></div>
+            <div class="menu-icon" id="menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#authors">News</a></li>
+                <li><a href="#authors">Categories</a></li>
+                <li><a href="#authors">Authors</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <img src="https://image-cloud-server.netlify.app/image_Pregnant-woman-768x499.jpeg" class="header-image">
+        <h1>Stress Management Techniques for Pregnant Women in Hong Kong</h1>
+        <div class="author">
+           
+            <span>By Ethan Walsh</span> 
+            <span class="meta"> · 29 August 2024 · 5 min read</span>
+        </div>
+ 
+
+
+       
+        <div class="content">
+            <hr>
+             <h2>Understanding Stress During Pregnancy</h2>
+
+<p>Pregnancy is an exciting time, but it also brings challenges. <strong>Stress is a normal reaction</strong> to the many changes happening both physically and emotionally. Understanding what creates stress during pregnancy is the first step towards managing it effectively.</p>
+
+<h3>Common Causes of Stress in Pregnant Women</h3>
+
+<p>Many factors can contribute to <strong>stress in pregnant women</strong>. Concerns about childbirth, financial worries, and job security can weigh heavily on expectant mothers. Relationships with partners or family members may also bring up stress. Furthermore, pregnancy symptoms like nausea and fatigue can add to emotional strain, creating a cycle that is hard to break.</p>
+
+<p>It is important to recognize that <strong>stress isn’t always obvious</strong>. Sometimes, it’s hidden under feelings of anxiety or sadness. Prioritizing your emotional well-being during this time is crucial. Identifying your triggers can be a great start to reducing stress levels.</p>
+
+<h3>Effects of Stress on Pregnancy</h3>
+
+<p>The effects of <strong>stress during pregnancy</strong> can influence both the mother and the baby. High levels of stress can lead to health complications like premature birth, low birth weight, and developmental issues. This is why managing stress is so important.</p>
+
+<p>Additionally, a stressed mother might find it harder to connect with her baby. This emotional disconnect can have lasting effects on parenting. It’s vital that both mothers and babies thrive, and addressing stress is a good way to support both.</p>
+
+<h3>Cultural and Societal Factors in Hong Kong</h3>
+
+<p>In Hong Kong, societal expectations can add pressure to pregnant women. There is often a strong emphasis on work, which can lead to <strong>stressful situations</strong>. Many mothers feel the weight of balancing a career with family life, making it even harder to relax.</p>
+
+<p>Understanding cultural concerns is important too. Family dynamics in Hong Kong often mean that extended family members have opinions on parenting. This can either support mothers or create additional stress. Finding a balance between personal needs and cultural expectations is essential for emotional health.</p>
+
+<h2>Importance of Stress Management in Pregnancy</h2>
+
+<p>Stress management is not just a luxury during pregnancy; it is essential for health. The benefits of addressing stress can lead to a smoother pregnancy experience. Thinking about these benefits can help motivate mothers to seek out solutions.</p>
+
+<h3>Health Benefits for Mother and Baby</h3>
+
+<p>Managing stress leads to numerous <strong>health benefits</strong> for both mother and baby. Reduced stress can improve sleep, enhance mood, and even boost immunity. For babies, lower stress levels often translate into healthier development and lower risks during birth.</p>
+
+<p>Healthy coping strategies can also improve relationships with partners. When stress is managed, communication tends to be better, leading to a stronger support system during this critical time. Consulting <a href="https://www.aimhealthyu.com/tw/star/12/pregnancy-wellness-hongkong-tcm">Premier Hong Kong TCM Doctors for Fertility</a> can also provide supportive treatments to alleviate stress.</p>
+
+<h3>Long-term Implications of Chronic Stress</h3>
+
+<p>Chronic stress doesn't just affect pregnancy; it has long-term implications. Mothers who experience high stress over time may face health issues like hypertension, anxiety, or depression. These conditions can influence parenting and bonding with the child.</p>
+
+<p>Understanding these long-term implications can motivate pregnant women to prioritize their mental well-being. Taking proactive steps now can create lasting positive changes that benefit the entire family.</p>
+
+<h3>Enhancing Overall Well-being</h3>
+
+<p>Effective stress management methods can significantly enhance overall well-being. When you feel better physically and emotionally, it leads to a more positive pregnancy experience. <strong>Engaging in stress reduction techniques</strong> can improve daily living, making it easier to enjoy this special time.</p>
+
+<p>Feeling relaxed can also help with day-to-day tasks. When the mind is free of stress, tasks seem less overwhelming, allowing mothers to embrace the joys of pregnancy more fully.</p>
+
+<h2>Relaxation Techniques</h2>
+
+<p>Relaxation techniques are vital tools for managing stress during pregnancy. These methods help calm the mind and body. They can easily be incorporated into daily routines.</p>
+
+<h3>Deep Breathing Exercises</h3>
+
+<p><strong>Deep breathing exercises</strong> are simple yet powerful. Just a few minutes of focused breathing can reduce tension and enhance relaxation. You can start by inhaling deeply through your nose, holding for a few seconds, and exhaling slowly through your mouth. Repeat this several times to bring peace to your mind.</p>
+
+<p>Practicing deep breathing can also help during labor. Understanding how to control your breath can provide comfort when facing challenges. Many mothers find this technique not only reduces stress but increases their confidence.</p>
+
+<h3>Progressive Muscle Relaxation</h3>
+
+<p>Another effective method is <strong>progressive muscle relaxation</strong>. This technique involves tensing and then relaxing different muscle groups. Start from your toes and work your way up to your head. By releasing tension, you help your body feel more relaxed and at ease.</p>
+
+<p>Setting aside time for this practice can transform your approach to stress. Consistency is important; with practice, many women notice improvements in not just their relaxation but in their overall mood.</p>
+
+<h3>Meditation and Mindfulness Practice</h3>
+
+<p>Meditation is another excellent practice. It helps center your thoughts and clear your mind. Mindfulness encourages you to focus on the present moment, which can greatly diminish worries about the future. You could start with just a few minutes each day, gradually increasing the duration.</p>
+
+<p>Many apps are available to guide you in meditation and mindfulness techniques. Finding the one that resonates with you can make the practice enjoyable and easy to integrate into your daily routine.</p>
+
+<h2>Physical Activity and Exercise</h2>
+
+<p>Physical activity can greatly help in stress management. <strong>Light to moderate exercise is beneficial</strong> during pregnancy. It promotes better sleep, reduces anxiety, and boosts mood.</p>
+
+<h3>Safe Prenatal Exercise Routines</h3>
+
+<p>Before starting any exercise routine, checking with a doctor is important. Safe prenatal exercise routines usually include low-impact activities such as walking, swimming, and stretching. These activities can keep you active and reduce stress without overwhelming your body.</p>
+
+<p>Group classes, like prenatal yoga, can also be enjoyable. Connecting with other expectant mothers while exercising creates a support system and encourages regular activity.</p>
+
+<h3>Benefits of Yoga and Pilates</h3>
+
+<p><strong>Yoga and Pilates</strong> are particularly beneficial during pregnancy. They focus on stretching and balancing. Through these practices, you not only enhance physical flexibility but also learn techniques to manage stress through breath control.</p>
+
+<p>Finding a class specifically for pregnant women can ensure safety and create a comforting atmosphere. Many mothers report feeling more relaxed and connected to their bodies after participating in these exercises.</p>
+
+<h3>Walking and Swimming for Pregnant Women</h3>
+
+<p>Two of the best forms of exercise during pregnancy are walking and swimming. They are <strong>low-impact</strong> and can be done at your own pace. Walking allows you to enjoy nature and clear your mind, while swimming can provide relief from body aches and swelling.</p>
+
+<p>Plus, both activities can easily be integrated into your daily routine. Whether strolling in the park or taking a trip to the pool, making time for these activities helps maintain both physical and mental health.</p>
+
+<h2>Emotional and Psychological Support</h2>
+
+<p>Support during pregnancy is crucial. Having a solid emotional framework can significantly reduce stress levels.</p>
+
+<h3>Role of Prenatal Counseling</h3>
+
+<p>Prenatal counseling can help you navigate the emotional ups and downs of pregnancy. A trained counselor can offer strategies for managing stress and provide a safe space to express worries and fears. Many women find relief in discussing their thoughts with someone who understands.</p>
+
+<p>Additionally, preparing for the changes that come with a new baby can be overwhelming. Support through counseling often enhances confidence in parenting abilities, soothing nagging insecurities.</p>
+
+<h3>Importance of Support Groups</h3>
+
+<p>Support groups can provide a sense of community. Sharing experiences with other expectant mothers can foster feelings of belonging. Knowing others face similar challenges can be comforting and provide practical advice.</p>
+
+<p>These groups can meet in-person or online, offering flexibility to fit your schedule. Engaging in discussions about parenting, childbirth, and common concerns can prove invaluable during pregnancy.</p>
+
+<h3>Partner and Family Involvement</h3>
+
+<p>Your partner and family play an important role in your emotional health. <strong>Involving them in the experience</strong> can deepen connections and reduce stress. Open communication about your feelings and fears can lead to a supportive environment.</p>
+
+<p>Encouraging family members to participate in prenatal appointments or classes can strengthen relationships. It's essential for everyone involved to understand the journey ahead. When family is aligned, it often smooths the path to parenthood.</p>
+
+<h2>Nutrition and Healthy Eating</h2>
+
+<p>What you eat can significantly influence your stress levels. <strong>Nutrition and stress management tie closely together</strong>. Nourishing your body helps manage not only physical health but emotional well-being.</p>
+
+<h3>Impact of Diet on Stress Levels</h3>
+
+<p>An unhealthy diet can lead to increased stress and anxiety. Consuming balanced meals with plenty of fruits, vegetables, whole grains, and lean proteins can stabilize moods and energy levels. Avoiding processed foods, high sugars, and excessive caffeine will also help.</p>
+
+<p>Eating regular meals prevents blood sugar drops, which can lead to irritability. Planning meals and snacks throughout the day ensures you stay nourished, contributing to a more relaxed state of mind.</p>
+
+<h3>Essential Nutrients for Stress Reduction</h3>
+
+<p>Several key nutrients aid in stress reduction. Omega-3 fatty acids, found in fish and flaxseeds, support brain health. Magnesium, found in nuts and leafy greens, can reduce anxiety levels. Ensuring you include these nutrients in your diet can significantly enhance your mood.</p>
+
+<p>Hydration also plays a vital role. Drinking enough water contributes to overall health. Dehydration can lead to fatigue and irritability, impacting your emotional state.</p>
+
+<h3>Meal Planning Tips for Pregnant Women</h3>
+
+<p>Meal planning can make healthier eating easier. Set aside time each week to plan meals and snacks. This strategy can help prevent unhealthy choices when you're busy or stressed.</p>
+
+<p>Think about engaging family members in meal prep. This not only makes it more fun but also ensures everyone is on board with healthy eating. Planning meals ahead can reinforce a healthy routine that supports emotional well-being.</p>
+
+<h2>Alternative Therapies</h2>
+
+<p>Exploring <strong>alternative therapies</strong> can provide additional options for stress management. Many women find comfort in approaches outside traditional methods.</p>
+
+<h3>Acupuncture for Stress Relief</h3>
+
+<p>Acupuncture can be an effective treatment for stress relief. By targeting specific points in the body, this practice aims to restore balance and promote relaxation. Many pregnant women find acupuncture helps alleviate physical discomforts, such as back pain, while also calming the mind.</p>
+
+<p>Consulting a licensed acupuncturist with experience in pregnancy is important. Bringing relief from both emotional and physical stress can contribute to a more enjoyable pregnancy experience.</p>
+
+<h3>Aromatherapy and Essential Oils</h3>
+
+<p>Aromatherapy is another powerful ally in managing stress. Certain essential oils, like lavender and chamomile, are known for their calming effects. Introducing these scents into your environment can create a serene space, perfect for relaxation.</p>
+
+<p>Safe methods include using a diffuser or adding a few drops to your bath. However, always check which essential oils are safe for pregnancy, as some can pose risks.</p>
+
+<h3>Massage Therapy for Pregnant Women</h3>
+
+<p>Massage therapy can provide significant relief from pregnancy-related tension. Skilled therapists use techniques tailored specifically for expectant mothers, focusing on areas like the back, neck, and shoulders.</p>
+
+<p>Not only does massage promote relaxation, but it can also improve circulation and alleviate physical discomfort. Seeking certified prenatal massage therapists ensures you receive safe and effective treatment.</p>
+
+<h2>Time Management and Lifestyle Adjustments</h2>
+
+<p>Finding balance during pregnancy can be challenging. Effective time management and lifestyle adjustments are key to stress reduction.</p>
+
+<h3>Prioritizing Rest and Sleep</h3>
+
+<p>Rest should be prioritized during pregnancy. Your body is working hard to support a growing baby, and quality sleep is essential. Create a relaxing bedtime routine to help signal to your body that it's time to wind down.</p>
+
+<p>Consider your environment; a dark, quiet room can facilitate better sleep. Don’t hesitate to take short naps during the day when needed. Prioritizing rest allows you to recharge, making it easier to handle daily stresses.</p>
+
+<h3>Effective Time Management Strategies</h3>
+
+<p>Time management strategies are crucial for reducing stress. Breaking tasks into smaller, manageable actions can make large projects less daunting. You might consider using a planner or digital calendar to keep track of appointments and responsibilities.</p>
+
+<p>Setting realistic goals is also important. Ask for help when needed, whether from family or friends. Delegating tasks can alleviate pressure and create a more balanced schedule.</p>
+
+<h3>Balancing Work and Personal Life</h3>
+
+<p>Maintaining a balance between work and personal life can be tricky. Use boundaries to protect your time and energy. Communicate your status with coworkers and take time for yourself every day.</p>
+
+<p>Finding time for hobbies you enjoy can also reduce stress. Engaging in activities that relax your mind and lift your spirits can significantly impact your overall well-being.</p>
+
+<h2>Professional Help and Resources</h2>
+
+<p>Sometimes, seeking professional help may be necessary. Recognizing the signs can lead to beneficial support for your emotional health.</p>
+
+<h3>When to Seek Professional Help</h3>
+
+<p>Are you feeling overwhelmed? If stress leads to persistent anxiety, depression, or difficulty coping with daily life, it may be time to seek professional guidance. Mental health professionals can provide tailored strategies and support.</p>
+
+<p>Don’t hesitate to reach out if you feel you need help. It's important to prioritize your mental health, and seeking support is a sign of strength, not weakness.</p>
+
+<h3>Available Resources in Hong Kong</h3>
+
+<p>In Hong Kong, there are various resources for pregnant women. Hospitals offer prenatal counseling and workshops. Many community organizations provide support groups and educational classes.</p>
+
+<p>Local clinics also often have mental health professionals specializing in maternal mental health. Researching options available can empower you to find the right help for your needs.</p>
+
+<h3>Contact Information for Support Centers and Hotlines</h3>
+
+<p>Having contact information for support centers can be invaluable. Many organizations offer hotlines where trained professionals can provide guidance. Make sure to store this information in a visible place for easy access if needed.</p>
+
+<p>Consider reaching out to local helplines, pregnancy support groups, or mental health services. These resources can make a significant difference, offering support when you need it most.</p>
+
+            
+
+
+            <br><br> <p>
+                
+
+        
+
+
+<br><br>
+        
+        </p>
+
+        
+
+        
+
+
+             
+           <br> <p>
+            <div class="next">
+       Related article: <a href="https://healthy-blogger.s3.eu-de.cloud-object-storage.appdomain.cloud/pregnancy-wellness-hongkong.html">Read more</a>
+    </div>
+       </p>
+        </div>
+    </div>
+    
+
+    <div class="author-box">
+     
+        <div class="info">
+            <h3>Ethan Walsh</h3>
+            <p>Senior Copywriter</p>
+            <p>Ethan Walsh is a seasoned copywriter specializing in pregnancy wellness in Hong Kong. With over a decade of experience, he expertly crafts content that empowers expectant mothers with essential health and wellness information. Combining his deep understanding of prenatal care with his passion for writing, Ethan has become a trusted voice in the Hong Kong maternity community. His work not only educates but also inspires a holistic approach to pregnancy well-being.</p>
+            <div class="social-media">
+                <a href="#"><i class="fab fa-instagram"></i>Instagram</a>
+                <a href="#"><i class="fab fa-twitter"></i>Twitter</a>
+                <a href="#"><i class="fab fa-linkedin"></i>LinkedIn</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="column">
+                <h3>Daily Dose of News</h3>
+                <p>&copy; 2024, All Rights Reserved.</p>
+            </div>
+            <div class="column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Advertise with us</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>Legal Stuff</h3>
+                <ul>
+                    <li><a href="#">Privacy Notice</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Terms Of Use</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>Social Media</h3>
+                <div class="social-media">
+                    <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('menu-icon').addEventListener('click', function () {
+            var navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        });
+    </script>
+<script>
+   document.addEventListener("DOMContentLoaded", function() {
+    // Select all anchor tags within the div with class 'next'
+    const links = document.querySelectorAll('div.next a');
+
+    // Iterate over each link
+    links.forEach(link => {
+        let href = link.getAttribute('href');
+
+        // Check if href is valid and does not end with .html or any other file extension
+        if (href && !href.endsWith('.html') && !href.match(/\.\w+$/)) {
+            // Add .html extension
+            href += '.html';
+            link.setAttribute('href', href);
+        }
+    });
+});
+
+ </script>
+ 
+</body>
+</html>
