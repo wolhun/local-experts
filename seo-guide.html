@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Impact of Mobile-Friendliness on SEO Rankings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            color: rgb(74, 85, 104);
+            font-size: 20px;
+            font-weight: 400;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1076px;
+            width: 100%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            flex: 1;
+        }
+        .containerfooter {
+            max-width: 1076px;
+            width: 100%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1;
+        }
+        .header-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        h1 {
+            font-size: 48px;
+            color: rgb(74, 85, 104);
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 30px;
+            color: rgb(74, 85, 104);
+        }
+        h3 {
+            font-size: 24px;
+            color: rgb(74, 85, 104);
+        }
+        .author {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+            color: rgb(74, 85, 104);
+        }
+        .author img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .author span {
+            margin-right: 5px;
+        }
+        .meta {
+            font-size: 0.9em;
+            color: rgb(74, 85, 104);
+        }
+        .content hr {
+            margin: 20px 0;
+            border: 0;
+            border-top: 1px solid #eee;
+        }
+        .content p {
+            margin: 10px 0;
+        }
+        .content ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .content ul li {
+            margin: 5px 0;
+        }
+        a {
+            color: #9370DB;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        nav {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+nav .nav-container {
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: rgb(74, 85, 104);
+}
+
+nav .menu-icon {
+    display: none;
+    font-size: 24px;
+    color: rgb(74, 85, 104);
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    font-size: 20px;
+    color: rgb(74, 85, 104);
+    font-weight: 400;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #9370DB;
+}
+
+@media (max-width: 600px) {
+    nav .menu-icon {
+        display: block;
+    }
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+    nav ul.active {
+        display: flex;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+        .author-box {
+            max-width: 1076px;
+            width: 100%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .author-box img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+        }
+        .author-box .info {
+            display: flex;
+            flex-direction: column;
+        }
+        .author-box .info h3 {
+            margin: 0;
+            font-size: 24px;
+            color: rgb(74, 85, 104);
+        }
+        .author-box .info p {
+            margin: 5px 0 10px;
+            color: rgb(74, 85, 104);
+            font-size: 16px;
+        }
+        .author-box .social-media {
+            display: flex;
+            align-items: center;
+        }
+        .author-box .social-media a {
+            color: #9370DB;
+            font-weight: 600;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        .author-box .social-media a i {
+            margin-right: 5px;
+        }
+        .author-box .social-media a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: white;
+            padding: 20px 0;
+            margin-top: auto;
+        }
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1076px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+            box-shadow:none;
+        }
+        footer .column {
+            flex: 1;
+            margin: 0 10px;
+        }
+        footer .column h3 {
+            font-size: 16px;
+            color: rgb(74, 85, 104);
+            margin-bottom: 10px;
+        }
+        footer .column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        footer .column ul li {
+            margin-bottom: 5px;
+        }
+        footer .column ul li a {
+            color: rgb(74, 85, 104);
+            text-decoration: none;
+            font-weight: 400;
+        }
+        footer .column ul li a:hover {
+            color: #9370DB;
+        }
+        footer .social-media a {
+            display: block;
+            color: rgb(74, 85, 104);
+            text-decoration: none;
+            margin-bottom: 5px;
+        }
+        footer .social-media a i {
+            font-size: 20px;
+            margin-right: 5px;
+        }
+        footer .social-media a:hover {
+            color: #9370DB;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 32px;
+            }
+            h2 {
+                font-size: 24px;
+            }
+            h3 {
+                font-size: 20px;
+            }
+            nav .nav-container {
+                flex-direction: column;
+                padding: 10px 20px;
+            }
+            nav .logo {
+                margin-bottom: 10px;
+            }
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            .author-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .author-box img {
+                margin-bottom: 10px;
+            }
+            .author-box .info h3 {
+                font-size: 20px;
+            }
+            .author-box .info p {
+                font-size: 14px;
+            }
+            footer .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            footer .column {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo"><a href="/">Latest News</a></div>
+            <div class="menu-icon" id="menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#authors">News</a></li>
+                <li><a href="#authors">Categories</a></li>
+                <li><a href="#authors">Authors</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <img src="https://image-cloud-server.netlify.app/image_gjcfgtcut.png" class="header-image">
+        <h1>The Impact of Mobile-Friendliness on SEO Rankings</h1>
+        <div class="author">
+           
+            <span>By Nathaniel Parker</span> 
+            <span class="meta"> · 29 August 2024 · 5 min read</span>
+        </div>
+ 
+
+
+       
+        <div class="content">
+            <hr>
+             <h2>The Evolution of Mobile-Friendliness in SEO</h2>
+
+<h3>Historical Perspective</h3>
+
+<p>Mobile-friendliness has transformed from a luxury to a necessity in the online landscape. Years ago, most users accessed the internet via desktops. Websites were primarily designed for larger screens. However, with the rise of smartphones, the way we browse has changed dramatically. Now, users expect content to be accessible anywhere, anytime.</p>
+
+<p>As more people began surfing the web on mobile devices, it became clear that mobile-friendly websites gained an advantage. Companies that adapted early experienced improved traffic and engagement. Google started to recognize this trend, pushing for sites that cater to mobile users. The shift wasn't just about aesthetics; it was about enhancing user experiences.</p>
+
+<h3>Key Milestones in Mobile SEO</h3>
+
+<p>Several milestones have marked the journey of mobile SEO. In 2015, Google made a significant announcement that changed the game. They confirmed that mobile-friendliness would impact search rankings. This revelation prompted webmasters to rethink their strategies.</p>
+
+<p>Another critical point was the introduction of responsive design. This technology allowed websites to adapt seamlessly to any screen size. It wasn’t long before Google promoted responsive designs as the preferred approach. Today, these practices are commonplace, but they once represented a crucial evolution in web design.</p>
+
+<h3>Current Trends and Developments</h3>
+
+<p>Today, mobile optimization continues to evolve at a brisk pace. The implementation of mobile-first indexing shows how serious Google is about prioritizing mobile experiences. More websites are adopting Progressive Web Apps (PWAs), offering users a fast, app-like experience directly from the browser.</p>
+
+<p>Moreover, artificial intelligence is now playing a role. Algorithms analyze how users interact with mobile sites, providing insights for further improvements. These advancements indicate that staying updated on mobile trends is not just beneficial—it is essential for online visibility.</p>
+
+<h2>Key Components of Mobile-Friendly Websites</h2>
+
+<h3>Responsive Design</h3>
+
+<p>Responsive design is a cornerstone of mobile-friendly websites. It ensures that site elements adjust according to the screen size. Whether it’s a smartphone, tablet, or desktop, users experience consistent content delivery. This adaptability significantly enhances user satisfaction.</p>
+
+<p>More than just maintaining appearances, responsive design helps reduce bounce rates. When users find what they expect upon visiting a site, they are more likely to stay longer. The longer they engage, the higher the chances of conversion. Ignoring responsive design can strand a website in the past. Those interested in enhancing their strategies can turn to <a href="https://www.lab-robotics.org/tw/star/12/ultimate-seo-guide">Top-Rated SEO Marketing Companies Recommendations</a> for valuable insights.</p>
+
+<h3>Fast Loading Speed</h3>
+
+<p>Fast loading speed is critical in today’s fast-paced environment. Users expect pages to load quickly—ideally in under three seconds. If a mobile site takes too long to load, visitors will likely leave. The importance of speed cannot be overstated; a delay can lead to revenue loss.</p>
+
+<p>Google has also confirmed that loading speed affects search rankings. Sites that load faster achieve better visibility on search engines. <strong>Optimizing images, reducing server response time, and minimizing redirects</strong> are essential steps in improving speed.</p>
+
+<h3>Mobile-Optimized Content</h3>
+
+<p>Content tailored for mobile is just as important as the design itself. This means using shorter paragraphs, bullet points, and clear headings. Mobile users often scan text rather than read it thoroughly. For this reason, delivering clear and concise information is key.</p>
+
+<p>Furthermore, video and images used on mobile sites should be optimized. Not all content translates well to smaller screens. Think about using vertical video formats or captions for videos to enhance accessibility.</p>
+
+<h3>User Experience and Navigation</h3>
+
+<p>User experience goes hand in hand with mobile-friendliness. Issues like small buttons or tight spacing can frustrate users. A well-considered navigation structure is essential; it guides visitors smoothly through the site. Intuitive navigation enhances user satisfaction and encourages longer visits.</p>
+
+<p>Moreover, implementing touch-friendly elements adds to a positive experience. <strong>Designing for fingers rather than pointers</strong> can ensure that users interact comfortably. A site that prioritizes user experience will naturally attract more traffic.</p>
+
+<h2>Google's Mobile-First Indexing</h2>
+
+<h3>What is Mobile-First Indexing?</h3>
+
+<p>Mobile-first indexing means Google uses the mobile version of a site for ranking and indexing. As most searches now originate from mobile devices, this shift emphasizes the importance of a site’s mobile presence. It means that Google considers how well a mobile site performs more than ever before.</p>
+
+<p>For webmasters, this change highlights the necessity of ensuring that mobile content is comprehensive. They should ask themselves, “Is my mobile site as informative as the desktop version?” If not, it’s time to rethink the strategy.</p>
+
+<h3>How Mobile-First Indexing Works</h3>
+
+<p>Googlebot crawls sites just like any user. In mobile-first indexing, it will first check the mobile version. If the mobile site lacks information that’s available on the desktop version, it can lead to poorer rankings. Essentially, Google prioritizes mobile content.</p>
+
+<p>Over time, more webmasters have shifted their focus to mobile optimization. They have begun designing mobile versions first, and then adapting for desktops. This proactive approach ensures alignment with Google’s indexing methods.</p>
+
+<h3>Implications for SEO Strategies</h3>
+
+<p>The implications of mobile-first indexing are far-reaching. Webmasters must prioritize mobile optimization in their SEO strategies. This might involve testing site speed, improving user experience, and ensuring that mobile content is just as rich as desktop content.</p>
+
+<p>Those who ignore these changes risk falling behind. Competitors with optimized mobile sites will capture more traffic. To stay relevant, businesses must adapt quickly. Ignoring mobile optimization could mean a significant loss of visibility.</p>
+
+<h2>Mobile Usability and Its Influence on Rankings</h2>
+
+<h3>Mobile Usability Factors</h3>
+
+<p>Understanding mobile usability is essential for improving search rankings. Factors like readability, navigation, and touch target sizes play a huge role. If a site is hard to read or navigate, users will likely leave, negatively affecting its ranking.</p>
+
+<p>User feedback is another crucial aspect of usability. How users interact with a mobile site must be monitored. High bounce rates can indicate that users are not finding what they need. This feedback helps in making timely adjustments.</p>
+
+<h3>Common Mobile Usability Issues</h3>
+
+<p>Common issues include improper resizing of text or images. If content doesn’t fit well on the screen, users can become frustrated. Additionally, links that are too close together can lead to accidental clicks, which will infuriate users.</p>
+
+<p>Another issue is the use of pop-ups or interstitials. While they can be effective for capturing leads, they can also annoy users on mobile devices. It’s important to strike a balance to ensure usability is not compromised.</p>
+
+<h3>Tools for Testing Mobile Usability</h3>
+
+<p>Websites can leverage various tools to assess their mobile usability. Google’s Mobile-Friendly Test is a popular choice. It evaluates how user-friendly a mobile site is and provides feedback for improvements.</p>
+
+<p>Other tools, like PageSpeed Insights or GTmetrix, offer insights into loading speed and usability. Regularly revisiting these tools can help ensure a site remains user-focused. Tracking these changes can improve both user experience and search rankings.</p>
+
+<h2>Technical Best Practices for Mobile SEO</h2>
+
+<h3>Accelerated Mobile Pages (AMP)</h3>
+
+<p>Accelerated Mobile Pages, or AMP, focus on speed and performance. They load much faster than traditional pages, enhancing user experience. By using a stripped-down version of HTML, AMP eliminates unnecessary elements while retaining essential content.</p>
+
+<p>Websites implementing AMP can see a decrease in bounce rates. Fast-loading pages create a smoother experience for users. Search engines also favor AMP pages, often featuring them in special carousels in search results.</p>
+
+<h3>Structured Data for Mobile Sites</h3>
+
+<p>Structured data helps search engines understand a website's content better. By providing context about your pages, it can enhance visibility in search results. Implementing structured data can result in rich snippets, drawing more attention from users.</p>
+
+<p>Mobile sites should prioritize using structured data to ensure content stands out. By effectively labeling information, a site can improve click-through rates. The clearer the information, the better the chances of attracting organic traffic.</p>
+
+<h3>Image Optimization for Mobile</h3>
+
+<p>Images contribute significantly to web performance, especially on mobile. Large image files can slow down load times. Optimizing images for the mobile web involves compressing files without losing quality.</p>
+
+<p>Using appropriate formats, like WebP, can enhance loading speed further. Implementing lazy loading is another excellent solution. This means images only load when they are visible to the user, improving overall site speed.</p>
+
+<h3>Minimizing JavaScript and CSS</h3>
+
+<p>Heavy JavaScript and CSS files can bog down site performance. Minimizing these files, therefore, is crucial for speed. Reducing the complexity of scripts can lead to faster load times, benefiting mobile usability.</p>
+
+<p>Web developers should prioritize cleaning up code. Any unnecessary elements should be removed. By streamlining the site, users enjoy a more efficient browsing experience.</p>
+
+<h2>Assessing Mobile-Friendliness</h2>
+
+<h3>Tools for Evaluating Mobile Friendliness</h3>
+
+<p>There are numerous tools available for assessing mobile-friendliness. Google’s Mobile-Friendly Test provides a straightforward evaluation. Simply input a URL, and it offers insights on how well the site performs on mobile devices.</p>
+
+<p>Other tools, like BrowserStack, allow for broader testing. They help developers view how a site appears on various devices. Regular use of these tools can ensure ongoing mobile optimization.</p>
+
+<h3>Metrics and KPIs to Monitor</h3>
+
+<p>Monitoring key performance indicators (KPIs) is vital for understanding mobile performance. Metrics such as bounce rates, loading speeds, and user engagement provide essential insights. Keeping an eye on these metrics allows for proactive changes.</p>
+
+<p>Regular analysis of mobile user behavior can lead to improvements. Adjustments made based on this data can enhance user satisfaction. Over time, this can contribute to better search rankings.</p>
+
+<h3>Regular Audits and Updates</h3>
+
+<p>Conducting regular audits guarantees that a website stays mobile-friendly. Frequent reviews help identify issues before they escalate. Keeping track of changes in web standards and user expectations ensures that the site remains competitive.</p>
+
+<p>Updates may include redesigns, faster loading tools, or better content strategies. A commitment to continuous improvement can lead to long-term success. Businesses that prioritize audits will generally see higher user retention and satisfaction.</p>
+
+<h2>Case Studies and Success Stories</h2>
+
+<h3>Companies Benefiting from Mobile Optimization</h3>
+
+<p>Many companies have seen impressive results from mobile optimization. For instance, a leading retail giant reported a significant increase in mobile sales after revamping their site. By creating a mobile-friendly experience, they catered to their growing base of on-the-go consumers.</p>
+
+<p>Another example is a popular travel booking site that invested in mobile design. The results were astounding, with increased user engagement and conversions. Entrepreneurs should observe how these brands pivoted toward mobile. Lessons learned from their success stories abound.</p>
+
+<h3>Comparative Analysis of Mobile vs. Desktop Performance</h3>
+
+<p>When comparing mobile and desktop performance, it's often a revelation. A website that thrives on desktop might struggle with mobile users. Businesses should study their analytics to understand these differences fully.</p>
+
+<p>For many sites, mobile traffic now surpasses desktop traffic. This shift signifies a need for businesses to prioritize mobile strategies. Enhancing the mobile experience can lead to more satisfied customers and better rankings.</p>
+
+<h3>Lessons Learned and Best Practices</h3>
+
+<p>There are valuable lessons to glean from successful mobile strategies. Clear, concise content is paramount. Keeping pages uncluttered and easy to navigate enhances overall user experience.</p>
+
+<p>Another best practice involves staying updated with trends. Trends change, and businesses that adapt quickly often lead the pack. Flexibility and commitment to mobile optimization are secrets to lasting success.</p>
+
+<h2>Common Challenges and Solutions</h2>
+
+<h3>Overcoming Mobile Design Limitations</h3>
+
+<p>Mobile design limitations can hinder user experience, but solutions exist. One approach is using flexible layouts that adjust content to various screen sizes. This method significantly enhances usability.</p>
+
+<p>Also, it's crucial to prioritize essential features over non-essentials in mobile layouts. Users need quick access to vital information. By simplifying design, businesses can improve functionality without sacrificing appearance.</p>
+
+<h3>Addressing Diverse Device Specifications</h3>
+
+<p>With countless devices on the market, it can be challenging to ensure a site looks good everywhere. Developers should consider responsive design techniques. This adaptability ensures websites perform well across different screen sizes.</p>
+
+<p>Testing on various devices is equally important. Regularly gathering insights and user feedback can highlight specific issues. Addressing these promptly can improve the overall user experience significantly.</p>
+
+<h3>Balancing Aesthetics and Functionality</h3>
+
+<p>Balancing aesthetics with functionality is crucial for mobile sites. A beautifully designed site that functions poorly can deter users. The focus should always be on user experience.</p>
+
+<p>Developers should strive for a look that doesn’t compromise performance. Choosing user-friendly design elements can enhance both visuals and functionality. A harmonious blend creates a winning combination for any mobile site.</p>
+
+            
+
+
+            <br><br> <p>
+                
+
+        
+
+
+<br><br>
+        
+        </p>
+
+        
+        <p><p>Read more: <a href="https://www.lab-robotics.org/tw/star/13/google-ranking-keywords-industries">Master Keywords and Search Intent for Easy Google Front Page Ranking</a></p></p>
+    
+
+        
+
+
+             
+           <br> <p>
+            <div class="next">
+       Related article: <a href="https://business-coaching.s3.eu-de.cloud-object-storage.appdomain.cloud/seo-guide.html">Read more</a>
+    </div>
+       </p>
+        </div>
+    </div>
+    
+
+    <div class="author-box">
+     
+        <div class="info">
+            <h3>Nathaniel Parker</h3>
+            <p>Senior Copywriter</p>
+            <p>Nathaniel Parker is a seasoned copywriter specializing in the intricacies of Search Engine Optimization (SEO). With over a decade of experience, Nathaniel has mastered the art of crafting compelling content that ranks highly in search engines. As the author of numerous SEO guides, he demystifies the complexities of SEO, offering clear, actionable insights that empower businesses to enhance their online presence. His expertise helps clients optimize their digital strategies and achieve measurable growth.</p>
+            <div class="social-media">
+                <a href="#"><i class="fab fa-instagram"></i>Instagram</a>
+                <a href="#"><i class="fab fa-twitter"></i>Twitter</a>
+                <a href="#"><i class="fab fa-linkedin"></i>LinkedIn</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="column">
+                <h3>Daily Dose of News</h3>
+                <p>&copy; 2024, All Rights Reserved.</p>
+            </div>
+            <div class="column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Advertise with us</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>Legal Stuff</h3>
+                <ul>
+                    <li><a href="#">Privacy Notice</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Terms Of Use</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>Social Media</h3>
+                <div class="social-media">
+                    <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('menu-icon').addEventListener('click', function () {
+            var navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        });
+    </script>
+<script>
+   document.addEventListener("DOMContentLoaded", function() {
+    // Select all anchor tags within the div with class 'next'
+    const links = document.querySelectorAll('div.next a');
+
+    // Iterate over each link
+    links.forEach(link => {
+        let href = link.getAttribute('href');
+
+        // Check if href is valid and does not end with .html or any other file extension
+        if (href && !href.endsWith('.html') && !href.match(/\.\w+$/)) {
+            // Add .html extension
+            href += '.html';
+            link.setAttribute('href', href);
+        }
+    });
+});
+
+ </script>
+ 
+</body>
+</html>
