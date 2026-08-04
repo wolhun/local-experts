@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>business | GH News</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Source+Serif+4:opsz,wght@8..60,400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <style>
+    /* ========================================================== */
+    /* GLOBALNE STYLE */
+    /* ========================================================== */
+    body {
+      margin: 0;
+      font-family: 'Source Serif 4', serif;
+      background-color: #ffffff;
+      color: #000000;
+      font-size: 20px;
+      font-weight: 400;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ------------------------------------- */
+    /* STYLOWANIE SCROLLBARA */
+    /* ------------------------------------- */
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #6fd0d6;
+        border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #5abdbd;
+    }
+
+    /* Dla Firefox */
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: #6fd0d6 #f1f1f1;
+    }
+
+    /* ========================================================== */
+    /* NAWIGACJA GŁÓWNA, STICKY I MEGAMENU */
+    /* ========================================================== */
+
+    /* MENU GŁÓWNE */
+    nav {
+      background-color: white;
+      padding: 0;
+      margin-bottom: 0;
+      border-bottom: 1px solid #e6e6e6;
+      border-top: 1px solid #e6e6e6;
+      position: relative; 
+    }
+
+    nav .nav-top {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 22px 12px 14px 12px;
+      border-bottom: 1px solid #efefef;
+      position: relative;
+    }
+
+    nav .logo {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 56px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #000;
+      line-height: 1;
+      max-width: calc(100% - 24px); 
+      word-break: break-word; 
+      white-space: normal;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    nav .logo a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    /* STYL DLA PRZYCISKU SUBSCRIBE */
+    .subscribe-btn {
+        position: absolute;
+        right: 10%; 
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #000; 
+        color: #fff; 
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 0;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: background-color 0.3s;
+    }
+
+    .subscribe-btn:hover {
+        background-color: #333;
+    }
+
+    /* WSPÓLNE MENU DLA MAIN I STICKY */
+    .nav-container {
+      max-width: 1140px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 16px;
+      position: relative;
+    }
+
+    /* Ikona Hamburger (ukryta na desktopie) */
+    .menu-icon {
+        display: none;
+        font-size: 22px;
+        color: #000;
+        cursor: pointer;
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      gap: 0;
+    }
+
+    .nav-links li {
+      position: relative;
+      padding: 0 14px;
+    }
+
+    .nav-links li:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 18px;
+      background: #d9d9d9;
+    }
+
+    .nav-links li a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 17px;
+      color: #000;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 0;
+    }
+
+    .nav-links li a:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* Ikonka strzałki w dół w linkach */
+    nav .nav-chev, .nav-links li a .fa-chevron-down {
+        font-size: 11px;
+        opacity: 0.6;
+        transform: translateY(1px);
+        margin-left: 4px; 
+        transition: transform 0.3s ease;
+    }
+
+    .nav-links li.has-submenu:hover > a .fa-chevron-down {
+        transform: translateY(1px) rotate(180deg);
+    }
+
+    /* STICKY MENU (PRZYKLEJONE) */
+    .sticky-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      border-bottom: 1px solid #e6e6e6;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-100%);
+      transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    }
+
+    .sticky-menu.sticky-active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    /* Pasek postępu czytania (wewnątrz sticky menu) */
+    .reading-progress {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        width: 0%;
+        background: #6fd0d6;
+        z-index: 1001;
+        transition: width 0.08s linear;
+        display: none; 
+    }
+
+    /* --- STYLI DLA MEGAMENU (POPRAWKA W TEJ SEKCJI) --- */
+
+    .nav-links li.has-submenu { position: relative; }
+
+    .nav-links li.has-submenu:hover > .megamenu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .megamenu {
+        position: absolute;
+        top: 100%;
+        left: 0; 
+        transform: translateY(10px);
+        z-index: 100;
+        background-color: white;
+        border: 1px solid #e6e6e6;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        padding: 20px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+        box-sizing: border-box;
+        pointer-events: none;
+        max-width: calc(100vw - 32px);
+    }
+
+    .nav-links li.has-submenu.align-right .megamenu {
+        left: auto;
+        right: 0; 
+        transform: translateY(10px);
+    }
+
+    .nav-links li.has-submenu.align-center .megamenu {
+        left: 50%;
+        transform: translateX(-50%) translateY(10px);
+    }
+
+    .megamenu.cols-4 { width: 900px; }
+    .megamenu.cols-3 { width: 680px; }
+    .megamenu.cols-2 { width: 460px; }
+
+    .megamenu .articles-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 20px;
+        margin: 0;
+    }
+
+    .megamenu.cols-3 .articles-grid { grid-template-columns: repeat(3, 1fr); }
+    .megamenu.cols-2 .articles-grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* POPRAWKA DLA KART ARTYKUŁÓW W MEGAMENU */
+    .megamenu .article-card { 
+        border: none; 
+        box-shadow: none; 
+        background: none; 
+        display: block; /* Zapewnia, że elementy wewnątrz układają się pionowo */
+        text-decoration: none;
+    }
+
+    .megamenu .article-card:hover { 
+        box-shadow: none; 
+        text-decoration: underline; 
+        text-underline-offset: 4px; 
+    }
+
+    .megamenu .article-card img { 
+        height: 140px; 
+        width: 100%; /* Obrazek na całą szerokość kolumny */
+        object-fit: cover;
+        display: block; /* Upewnia, że obrazek nie pozostawia luk */
+    }
+
+    .megamenu .card-content { 
+        padding: 10px 0 0 0; 
+    }
+    
+    .megamenu .card-title { 
+        font-size: 16px; 
+        font-weight: 600; 
+        margin-top: 5px; 
+    }
+
+
+    /* ========================================================== */
+    /* MODAL (NEWSLETTER) */
+    /* ========================================================== */
+
+    .modal {
+        display: none; 
+        position: fixed;
+        z-index: 2000; 
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.7); 
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 30px;
+        border: none;
+        width: 90%; 
+        max-width: 500px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        position: relative;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .modal-close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        cursor: pointer;
+    }
+
+    .modal-close:hover,
+    .modal-close:focus {
+        color: #000;
+        text-decoration: none;
+    }
+
+    .modal-content h2 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 10px;
+        line-height: 1.3;
+    }
+
+    .modal-content p {
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+
+    .modal-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .modal-form input[type="email"] {
+        padding: 12px 15px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        font-family: 'Montserrat', sans-serif;
+        outline: none;
+        transition: border-color 0.3s;
+    }
+
+    .modal-form input[type="email"]:focus {
+        border-color: #000;
+    }
+
+    .modal-form button[type="submit"] {
+        background-color: #000;
+        color: white;
+        padding: 12px 15px;
+        border: none;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .modal-form button[type="submit"]:hover {
+        background-color: #333;
+    }
+
+    .success-message {
+        font-size: 16px;
+        color: #008000; 
+        padding: 15px;
+        border: 1px solid #c3e6cb;
+        background-color: #d4edda;
+        display: none; 
+        margin-top: 10px;
+    }
+
+    /* ========================================================== */
+    /* SEKCJE ARTYKUŁÓW I TREŚCI */
+    /* ========================================================== */
+    
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 18px 12px 0 12px;
+    }
+
+    .page-title {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* TOP FEATURED SECTION (3 duże karty) */
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-left: 1px solid #eee;
+      border-right: 1px solid #eee;
+    }
+
+    .featured-card {
+      position: relative;
+      min-height: 420px;
+      background-size: cover;
+      background-position: center;
+      border-right: 1px solid #eee;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .featured-card:last-child { border-right: none; }
+
+    .featured-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.8));
+    }
+
+    .featured-content {
+      position: relative;
+      z-index: 2;
+      padding: 22px;
+      color: #fff;
+      width: 100%;
+    }
+
+    .tag-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+    }
+
+    .tag {
+      background: #e53935;
+      color: #fff;
+      padding: 5px 8px;
+      font-weight: 700;
+    }
+
+    .time {
+      opacity: 0.9;
+      font-size: 12px;
+      text-transform: none;
+      letter-spacing: 0;
+      font-weight: 500;
+    }
+
+    .featured-title {
+      font-size: clamp(22px, 3.2vw, 42px);
+      line-height: 1.2;
+      font-weight: 700;
+      margin: 0;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+    }
+
+    /* CATEGORY TABS + 6 SMALL CARDS */
+    .section-tabs {
+      margin-top: 14px;
+      border-top: 1px solid #eee;
+      padding-top: 14px;
+    }
+
+    .tabs-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      border-bottom: 1px solid #e6e6e6;
+      padding-bottom: 8px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .tab {
+      color: #777;
+      cursor: pointer;
+      padding-bottom: 6px;
+      border-bottom: 3px solid transparent;
+    }
+
+    .tab.active {
+      color: #e53935;
+      border-bottom-color: #e53935;
+    }
+
+    .small-cards-grid {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 18px;
+    }
+
+    .small-card {
+      position: relative;
+      min-height: 260px;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      border: 1px solid #eee;
+    }
+
+    .small-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.8));
+    }
+
+    .small-content {
+      position: relative;
+      z-index: 2;
+      padding: 14px;
+      color: #fff;
+      width: 100%;
+    }
+
+    .small-title {
+      font-size: 18px;
+      line-height: 1.35;
+      font-weight: 700;
+      margin: 0 0 10px 0;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+    }
+
+    .small-meta {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0.95;
+    }
+
+    .small-meta .cat { color: #e53935; font-weight: 700; text-transform: uppercase; }
+    .small-meta .dot { opacity: 0.7; }
+
+    /* LAST SECTION: 4 COLUMNS */
+    .four-cols {
+      margin-top: 18px;
+      border-top: 1px solid #eee;
+      padding-top: 18px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 0.9fr 1fr;
+      gap: 18px;
+    }
+
+    .col-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0 0 10px 0;
+    }
+
+    .big-list-card {
+      position: relative;
+      min-height: 260px;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      border: 1px solid #eee;
+      margin-bottom: 10px;
+    }
+
+    .big-list-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.85));
+    }
+
+    .big-list-content {
+      position: relative;
+      z-index: 2;
+      padding: 14px;
+      color: #fff;
+      width: 100%;
+    }
+
+    .big-list-title {
+      font-size: 22px;
+      line-height: 1.3;
+      font-weight: 700;
+      margin: 0 0 8px 0;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+    }
+
+    .big-list-meta {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0.95;
+    }
+
+    .text-item {
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .text-item:last-child { border-bottom: none; }
+
+    .text-item-title {
+      font-size: 18px;
+      line-height: 1.35;
+      font-weight: 600;
+      margin: 0 0 6px 0;
+    }
+
+    .text-item-meta {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      color: #555;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .text-item-meta .cat { color: #e53935; font-weight: 700; text-transform: uppercase; }
+
+    .ad-box {
+      border: 1px solid #eee;
+      padding: 8px;
+      text-align: center;
+      position: sticky;
+      top: 90px;
+      background: #fafafa;
+    }
+
+    .ad-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 8px;
+    }
+
+    .ad-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ========================================================== */
+    /* FOOTER */
+    /* ========================================================== */
+
+    footer {
+      background: #000;
+      color: #fff;
+      padding: 48px 0;
+      margin-top: 30px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    footer .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    footer h3 {
+      font-size: 14px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #fff;
+      margin: 0 0 14px 0;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    footer .footer-brand {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    footer p, footer a, footer li {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #cfcfcf;
+      margin: 0 0 10px 0;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    footer .footer-item {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #222;
+    }
+
+    footer .footer-thumb {
+      width: 70px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 0;
+      flex: none;
+      background: #111;
+    }
+
+    footer .footer-item-title {
+      font-size: 14px;
+      color: #fff;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    footer .footer-item-date {
+      font-size: 12px;
+      color: #999;
+      margin-top: 4px;
+    }
+
+    footer .comment-author {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #6fd0d6;
+      margin-right: 6px;
+    }
+
+    /* FOOTER BOTTOM BAR */
+    .footer-bottom-bar {
+        padding-top: 16px; 
+    }
+
+    footer .footer-bottom-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        color: #999; 
+    }
+
+    footer .footer-bottom-links a {
+        color: #cfcfcf;
+        font-weight: 500;
+        margin-left: 20px;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    footer .footer-bottom-links a:hover {
+        color: #fff;
+        text-decoration: underline;
+    }
+
+    /* ========================================================== */
+    /* MEDIA QUERIES */
+    /* ========================================================== */
+
+    /* Tablet (do 1100px) */
+    @media (max-width: 1100px) {
+        .small-cards-grid { grid-template-columns: repeat(3, 1fr); }
+        .four-cols { grid-template-columns: 1fr 1fr; }
+        .ad-box { position: static; }
+    }
+
+    /* Małe Tablety (do 900px) */
+    @media (max-width: 900px) {
+      /* Nawigacja */
+      .subscribe-btn {
+          position: static;
+          transform: none;
+          margin-top: 10px;
+          right: auto;
+          font-size: 16px;
+      }
+      .nav-links li.has-submenu .megamenu {
+          display: none;
+      }
+      .featured-grid { grid-template-columns: 1fr; }
+      .featured-card { border-right: none; border-bottom: 1px solid #eee; min-height: 360px; }
+      .featured-card:last-child { border-bottom: none; }
+      /* Stopka */
+      footer .footer-container { 
+          grid-template-columns: 1fr; 
+          gap: 30px;
+      }
+    }
+
+    /* Małe Mobile (do 700px) */
+    @media (max-width: 700px) {
+        .small-cards-grid { grid-template-columns: 1fr; }
+        .four-cols { grid-template-columns: 1fr; }
+    }
+
+    /* Mobile (do 600px) */
+    @media (max-width: 600px) {
+      /* Logo */
+      nav .logo {
+          line-height: 1.1; 
+          max-width: 90%; 
+          font-size: 40px;
+      }
+      /* Ikona i Przycisk */
+      .menu-icon {
+          display: block; 
+          position: absolute; 
+          left: 12px; 
+          right: auto; 
+          top: 15px; 
+          transform: none;
+          z-index: 100;
+      }
+      .subscribe-btn {
+          position: absolute;
+          top: 15px; 
+          right: 12px; 
+          transform: none;
+          margin: 0;
+          padding: 8px 14px;
+          font-size: 14px;
+          z-index: 100;
+      }
+      /* Nav Top (Dostosowanie kontenera logo) */
+      nav .nav-top {
+          flex-direction: column; 
+          padding: 55px 12px 10px 12px; 
+          align-items: center; 
+          min-height: auto;
+      }
+      nav .logo {
+          order: 2; 
+          margin-top: 10px; 
+      }
+      /* Linki */
+      .nav-container {
+          padding: 0;
+          border-top: none;
+          position: static; 
+      }
+      .nav-links {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          text-align: center;
+          padding-top: 8px;
+      }
+      .nav-links.active {
+          display: flex;
+      }
+      .nav-links li {
+          padding: 10px 0;
+      }
+      .nav-links li:not(:last-child)::after {
+          display: none;
+      }
+      /* Modal na mobile */
+      .modal-content {
+          margin: 5% auto; 
+          padding: 20px;
+      }
+      /* Stopka */
+      footer .footer-bottom-inner {
+          flex-direction: column;
+          text-align: center;
+          gap: 15px;
+      }
+      footer .footer-bottom-links a {
+          margin: 0 10px;
+      }
+    }
+</style>
+</head>
+<body>
+
+  <header class="site-header">
+  <nav id="main-nav" aria-label="Primary navigation">
+    <div class="nav-top">
+        <div class="logo"><a href="index.html">GH News</a></div>
+        <button class="subscribe-btn" id="open-modal-btn">Subscribe</button>
+    </div>
+
+    <div class="nav-container">
+        <div class="menu-icon" id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="nav-links">
+
+            <li class="has-submenu" data-category="home-garden">
+                <a href="home-garden.html">Home &amp; Garden <i class="fas fa-chevron-down"></i></a>
+                <div class="megamenu cols-4">
+                    <div class="megamenu-inner articles-grid">
+                        <a href="home-garden.html#article1" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/11.jpg" alt="Essential Tips for a Lush Spring Lawn">
+                            <div class="card-content">
+                                <span class="card-category">Home & Garden</span>
+                                <h4 class="card-title">Essential Tips for a Lush Spring Lawn</h4>
+                            </div>
+                        </a>
+                        <a href="home-garden.html#article2" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/22.jpeg" alt="DIY Smart Home: 5 Budget-Friendly Automation Ideas">
+                            <div class="card-content">
+                                <span class="card-category">Home & Garden</span>
+                                <h4 class="card-title">DIY Smart Home: 5 Budget-Friendly Automation Ideas</h4>
+                            </div>
+                        </a>
+                        <a href="home-garden.html#article3" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/33.jpg.webp" alt="Minimalist Decor Trends for Your Living Room">
+                            <div class="card-content">
+                                <span class="card-category">Home & Garden</span>
+                                <h4 class="card-title">Minimalist Decor Trends for Your Living Room</h4>
+                            </div>
+                        </a>
+                        <a href="home-garden.html#article4" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/44.jpg" alt="The Best Indoor Plants for Low Light Conditions">
+                            <div class="card-content">
+                                <span class="card-category">Home & Garden</span>
+                                <h4 class="card-title">The Best Indoor Plants for Low Light Conditions</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-submenu align-center" data-category="business">
+                <a href="business.html">Business <i class="fas fa-chevron-down"></i></a>
+                <div class="megamenu cols-3">
+                    <div class="megamenu-inner articles-grid">
+                        <a href="business.html#article1" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/55.webp" alt="Future of Remote Work: Key Challenges and Opportunities">
+                            <div class="card-content">
+                                <span class="card-category">Business</span>
+                                <h4 class="card-title">Future of Remote Work: Key Challenges and Opportunities</h4>
+                            </div>
+                        </a>
+                        <a href="business.html#article2" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/66.jpeg" alt="Understanding Global Supply Chain Disruptions">
+                            <div class="card-content">
+                                <span class="card-category">Business</span>
+                                <h4 class="card-title">Understanding Global Supply Chain Disruptions</h4>
+                            </div>
+                        </a>
+                        <a href="business.html#article3" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/77.jpeg" alt="Start-Up Funding: What Investors are Looking for in 2024">
+                            <div class="card-content">
+                                <span class="card-category">Business</span>
+                                <h4 class="card-title">Start-Up Funding: What Investors are Looking for in 2024</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-submenu align-center" data-category="technology">
+                <a href="technology.html">Technology <i class="fas fa-chevron-down"></i></a>
+                <div class="megamenu cols-4">
+                    <div class="megamenu-inner articles-grid">
+                        <a href="technology.html#article1" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/88.png" alt="The Rise of Generative AI in Creative Industries">
+                            <div class="card-content">
+                                <span class="card-category">Technology</span>
+                                <h4 class="card-title">The Rise of Generative AI in Creative Industries</h4>
+                            </div>
+                        </a>
+                        <a href="technology.html#article2" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/99.jpg" alt="Understanding Next-Gen Cybersecurity Threats">
+                            <div class="card-content">
+                                <span class="card-category">Technology</span>
+                                <h4 class="card-title">Understanding Next-Gen Cybersecurity Threats</h4>
+                            </div>
+                        </a>
+                        <a href="technology.html#article3" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/111.jpeg" alt="Space Tourism: Is It the Next Big Thing for Tech?">
+                            <div class="card-content">
+                                <span class="card-category">Technology</span>
+                                <h4 class="card-title">Space Tourism: Is It the Next Big Thing for Tech?</h4>
+                            </div>
+                        </a>
+                        <a href="technology.html#article4" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/222.webp" alt="Review: The Latest Foldable Smartphones on the Market">
+                            <div class="card-content">
+                                <span class="card-category">Technology</span>
+                                <h4 class="card-title">Review: The Latest Foldable Smartphones on the Market</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-submenu align-center" data-category="travel">
+                <a href="travel.html">Travel <i class="fas fa-chevron-down"></i></a>
+                <div class="megamenu cols-3">
+                    <div class="megamenu-inner articles-grid">
+                        <a href="travel.html#article1" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/333.webp" alt="Hidden Gems of the Mediterranean Coast">
+                            <div class="card-content">
+                                <span class="card-category">Travel</span>
+                                <h4 class="card-title">Hidden Gems of the Mediterranean Coast</h4>
+                            </div>
+                        </a>
+                        <a href="travel.html#article2" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/444.jpeg" alt="Budget Travel: Exploring Europe by Train">
+                            <div class="card-content">
+                                <span class="card-category">Travel</span>
+                                <h4 class="card-title">Budget Travel: Exploring Europe by Train</h4>
+                            </div>
+                        </a>
+                        <a href="travel.html#article3" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/555.jpg" alt="Top 5 Adventure Destinations for Solo Backpackers">
+                            <div class="card-content">
+                                <span class="card-category">Travel</span>
+                                <h4 class="card-title">Top 5 Adventure Destinations for Solo Backpackers</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-submenu align-center" data-category="health">
+                <a href="health.html">Health <i class="fas fa-chevron-down"></i></a>
+                <div class="megamenu cols-3">
+                    <div class="megamenu-inner articles-grid">
+                        <a href="health.html#article1" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/666.jpg" alt="The Science Behind Intermittent Fasting">
+                            <div class="card-content">
+                                <span class="card-category">Health</span>
+                                <h4 class="card-title">The Science Behind Intermittent Fasting</h4>
+                            </div>
+                        </a>
+                        <a href="health.html#article2" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/777.png" alt="Practicing Mindfulness for Better Mental Well-being">
+                            <div class="card-content">
+                                <span class="card-category">Health</span>
+                                <h4 class="card-title">Practicing Mindfulness for Better Mental Well-being</h4>
+                            </div>
+                        </a>
+                        <a href="health.html#article3" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/888.webp" alt="Boosting Immunity: Foods to Eat This Winter">
+                            <div class="card-content">
+                                <span class="card-category">Health</span>
+                                <h4 class="card-title">Boosting Immunity: Foods to Eat This Winter</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-submenu align-right" data-category="fashion">
+                <a href="fashion.html">Fashion <i class="fas fa-chevron-down"></i></a>
+                <div class="megamenu cols-2">
+                    <div class="megamenu-inner articles-grid">
+                        <a href="fashion.html#article1" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/999.webp" alt="The Hottest Trends from the Fall/Winter Runways">
+                            <div class="card-content">
+                                <span class="card-category">Fashion</span>
+                                <h4 class="card-title">The Hottest Trends from the Fall/Winter Runways</h4>
+                            </div>
+                        </a>
+                        <a href="fashion.html#article2" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/1111.webp" alt="Sustainable Style: Building an Ethical Wardrobe">
+                            <div class="card-content">
+                                <span class="card-category">Fashion</span>
+                                <h4 class="card-title">Sustainable Style: Building an Ethical Wardrobe</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-submenu align-right" data-category="entertainment">
+                <a href="entertainment.html">Entertainment <i class="fas fa-chevron-down"></i></a>
+                <div class="megamenu cols-4">
+                    <div class="megamenu-inner articles-grid">
+                        <a href="entertainment.html#article1" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/2222.jpg" alt="Review: The Most Anticipated Movies of the Year">
+                            <div class="card-content">
+                                <span class="card-category">Entertainment</span>
+                                <h4 class="card-title">Review: The Most Anticipated Movies of the Year</h4>
+                            </div>
+                        </a>
+                        <a href="entertainment.html#article2" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/3333.jpg" alt="The Comeback of Vinyl: Why Records are Popular Again">
+                            <div class="card-content">
+                                <span class="card-category">Entertainment</span>
+                                <h4 class="card-title">The Comeback of Vinyl: Why Records are Popular Again</h4>
+                            </div>
+                        </a>
+                        <a href="entertainment.html#article3" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/4444.jpg" alt="Top 10 Video Games Dominating the Streaming World">
+                            <div class="card-content">
+                                <span class="card-category">Entertainment</span>
+                                <h4 class="card-title">Top 10 Video Games Dominating the Streaming World</h4>
+                            </div>
+                        </a>
+                        <a href="entertainment.html#article4" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/5555.webp" alt="Behind the Scenes: A Look at the Latest Blockbuster TV Series">
+                            <div class="card-content">
+                                <span class="card-category">Entertainment</span>
+                                <h4 class="card-title">Behind the Scenes: A Look at the Latest Blockbuster TV Series</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-submenu align-right" data-category="lifestyle">
+                <a href="lifestyle.html">Lifestyle <i class="fas fa-chevron-down"></i></a>
+                <div class="megamenu cols-3">
+                    <div class="megamenu-inner articles-grid">
+                        <a href="lifestyle.html#article1" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/6666.jpg" alt="Mastering the Art of Work-Life Balance in a Digital Age">
+                            <div class="card-content">
+                                <span class="card-category">Lifestyle</span>
+                                <h4 class="card-title">Mastering the Art of Work-Life Balance in a Digital Age</h4>
+                            </div>
+                        </a>
+                        <a href="lifestyle.html#article2" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/7777.jpg" alt="The Power of Digital Detox: Reclaiming Your Free Time">
+                            <div class="card-content">
+                                <span class="card-category">Lifestyle</span>
+                                <h4 class="card-title">The Power of Digital Detox: Reclaiming Your Free Time</h4>
+                            </div>
+                        </a>
+                        <a href="lifestyle.html#article3" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/8888.jpeg" alt="Simple Meditation Techniques for Beginners">
+                            <div class="card-content">
+                                <span class="card-category">Lifestyle</span>
+                                <h4 class="card-title">Simple Meditation Techniques for Beginners</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-submenu align-right" data-category="news">
+                <a href="news.html">News <i class="fas fa-chevron-down"></i></a>
+                <div class="megamenu cols-2">
+                    <div class="megamenu-inner articles-grid">
+                        <a href="news.html#article1" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/9999.jpg" alt="Global Leaders Discuss Climate Change Policy at Summit">
+                            <div class="card-content">
+                                <span class="card-category">News</span>
+                                <h4 class="card-title">Global Leaders Discuss Climate Change Policy at Summit</h4>
+                            </div>
+                        </a>
+                        <a href="news.html#article2" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/11111.png" alt="Local Community Rallies to Save Historic Landmark">
+                            <div class="card-content">
+                                <span class="card-category">News</span>
+                                <h4 class="card-title">Local Community Rallies to Save Historic Landmark</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
+<nav class="sticky-menu" id="sticky-menu" aria-label="Sticky primary navigation">
+    <div class="nav-container">
+        <div class="menu-icon" id="sticky-menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="sticky-nav-list"> 
+
+            <li class="has-submenu" data-category="home-garden">
+                <a href="home-garden.html">Home &amp; Garden <i class="fas fa-chevron-down"></i></a>
+                <div class="megamenu cols-4">
+                    <div class="megamenu-inner articles-grid">
+                        <a href="home-garden.html#article1" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/11.jpg" alt="Essential Tips for a Lush Spring Lawn">
+                            <div class="card-content">
+                                <span class="card-category">Home & Garden</span>
+                                <h4 class="card-title">Essential Tips for a Lush Spring Lawn</h4>
+                            </div>
+                        </a>
+                        <a href="home-garden.html#article2" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/22.jpeg" alt="DIY Smart Home: 5 Budget-Friendly Automation Ideas">
+                            <div class="card-content">
+                                <span class="card-category">Home & Garden</span>
+                                <h4 class="card-title">DIY Smart Home: 5 Budget-Friendly Automation Ideas</h4>
+                            </div>
+                        </a>
+                        <a href="home-garden.html#article3" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/33.jpg.webp" alt="Minimalist Decor Trends for Your Living Room">
+                            <div class="card-content">
+                                <span class="card-category">Home & Garden</span>
+                                <h4 class="card-title">Minimalist Decor Trends for Your Living Room</h4>
+                            </div>
+                        </a>
+                        <a href="home-garden.html#article4" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/44.jpg" alt="The Best Indoor Plants for Low Light Conditions">
+                            <div class="card-content">
+                                <span class="card-category">Home & Garden</span>
+                                <h4 class="card-title">The Best Indoor Plants for Low Light Conditions</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-submenu align-center" data-category="business">
+                <a href="business.html">Business <i class="fas fa-chevron-down"></i></a>
+                <div class="megamenu cols-3">
+                    <div class="megamenu-inner articles-grid">
+                        <a href="business.html#article1" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/55.webp" alt="Future of Remote Work: Key Challenges and Opportunities">
+                            <div class="card-content">
+                                <span class="card-category">Business</span>
+                                <h4 class="card-title">Future of Remote Work: Key Challenges and Opportunities</h4>
+                            </div>
+                        </a>
+                        <a href="business.html#article2" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/66.jpeg" alt="Understanding Global Supply Chain Disruptions">
+                            <div class="card-content">
+                                <span class="card-category">Business</span>
+                                <h4 class="card-title">Understanding Global Supply Chain Disruptions</h4>
+                            </div>
+                        </a>
+                        <a href="business.html#article3" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/77.jpeg" alt="Start-Up Funding: What Investors are Looking for in 2024">
+                            <div class="card-content">
+                                <span class="card-category">Business</span>
+                                <h4 class="card-title">Start-Up Funding: What Investors are Looking for in 2024</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-submenu align-center" data-category="technology">
+                <a href="technology.html">Technology <i class="fas fa-chevron-down"></i></a>
+                <div class="megamenu cols-4">
+                    <div class="megamenu-inner articles-grid">
+                        <a href="technology.html#article1" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/88.png" alt="The Rise of Generative AI in Creative Industries">
+                            <div class="card-content">
+                                <span class="card-category">Technology</span>
+                                <h4 class="card-title">The Rise of Generative AI in Creative Industries</h4>
+                            </div>
+                        </a>
+                        <a href="technology.html#article2" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/99.jpg" alt="Understanding Next-Gen Cybersecurity Threats">
+                            <div class="card-content">
+                                <span class="card-category">Technology</span>
+                                <h4 class="card-title">Understanding Next-Gen Cybersecurity Threats</h4>
+                            </div>
+                        </a>
+                        <a href="technology.html#article3" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/111.jpeg" alt="Space Tourism: Is It the Next Big Thing for Tech?">
+                            <div class="card-content">
+                                <span class="card-category">Technology</span>
+                                <h4 class="card-title">Space Tourism: Is It the Next Big Thing for Tech?</h4>
+                            </div>
+                        </a>
+                        <a href="technology.html#article4" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/222.webp" alt="Review: The Latest Foldable Smartphones on the Market">
+                            <div class="card-content">
+                                <span class="card-category">Technology</span>
+                                <h4 class="card-title">Review: The Latest Foldable Smartphones on the Market</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-submenu align-center" data-category="travel">
+                <a href="travel.html">Travel <i class="fas fa-chevron-down"></i></a>
+                <div class="megamenu cols-3">
+                    <div class="megamenu-inner articles-grid">
+
+                        <a href="travel.html#article1" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/333.webp" alt="Hidden Gems of the Mediterranean Coast">
+                            <div class="card-content">
+                                <span class="card-category">Travel</span>
+                                <h4 class="card-title">Hidden Gems of the Mediterranean Coast</h4>
+                            </div>
+                        </a>
+
+                        <a href="travel.html#article2" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/444.jpeg" alt="Budget Travel: Exploring Europe by Train">
+                            <div class="card-content">
+                                <span class="card-category">Travel</span>
+                                <h4 class="card-title">Budget Travel: Exploring Europe by Train</h4>
+                            </div>
+                        </a>
+
+                        <a href="travel.html#article3" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/555.jpg" alt="Top 5 Adventure Destinations for Solo Backpackers">
+                            <div class="card-content">
+                                <span class="card-category">Travel</span>
+                                <h4 class="card-title">Top 5 Adventure Destinations for Solo Backpackers</h4>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-submenu align-center" data-category="health">
+                <a href="health.html">Health <i class="fas fa-chevron-down"></i></a>
+                <div class="megamenu cols-3">
+                    <div class="megamenu-inner articles-grid">
+
+                        <a href="health.html#article1" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/666.jpg" alt="The Science Behind Intermittent Fasting">
+                            <div class="card-content">
+                                <span class="card-category">Health</span>
+                                <h4 class="card-title">The Science Behind Intermittent Fasting</h4>
+                            </div>
+                        </a>
+
+                        <a href="health.html#article2" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/777.png" alt="Practicing Mindfulness for Better Mental Well-being">
+                            <div class="card-content">
+                                <span class="card-category">Health</span>
+                                <h4 class="card-title">Practicing Mindfulness for Better Mental Well-being</h4>
+                            </div>
+                        </a>
+
+                        <a href="health.html#article3" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/888.webp" alt="Boosting Immunity: Foods to Eat This Winter">
+                            <div class="card-content">
+                                <span class="card-category">Health</span>
+                                <h4 class="card-title">Boosting Immunity: Foods to Eat This Winter</h4>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-submenu align-right" data-category="fashion">
+                <a href="fashion.html">Fashion <i class="fas fa-chevron-down"></i></a>
+                <div class="megamenu cols-2">
+                    <div class="megamenu-inner articles-grid">
+
+                        <a href="fashion.html#article1" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/999.webp" alt="The Hottest Trends from the Fall/Winter Runways">
+                            <div class="card-content">
+                                <span class="card-category">Fashion</span>
+                                <h4 class="card-title">The Hottest Trends from the Fall/Winter Runways</h4>
+                            </div>
+                        </a>
+
+                        <a href="fashion.html#article2" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/1111.webp" alt="Sustainable Style: Building an Ethical Wardrobe">
+                            <div class="card-content">
+                                <span class="card-category">Fashion</span>
+                                <h4 class="card-title">Sustainable Style: Building an Ethical Wardrobe</h4>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-submenu align-right" data-category="entertainment">
+                <a href="entertainment.html">Entertainment <i class="fas fa-chevron-down"></i></a>
+                <div class="megamenu cols-4">
+                    <div class="megamenu-inner articles-grid">
+
+                        <a href="entertainment.html#article1" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/2222.jpg" alt="Review: The Most Anticipated Movies of the Year">
+                            <div class="card-content">
+                                <span class="card-category">Entertainment</span>
+                                <h4 class="card-title">Review: The Most Anticipated Movies of the Year</h4>
+                            </div>
+                        </a>
+
+                        <a href="entertainment.html#article2" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/3333.jpg" alt="The Comeback of Vinyl: Why Records are Popular Again">
+                            <div class="card-content">
+                                <span class="card-category">Entertainment</span>
+                                <h4 class="card-title">The Comeback of Vinyl: Why Records are Popular Again</h4>
+                            </div>
+                        </a>
+
+                        <a href="entertainment.html#article3" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/4444.jpg" alt="Top 10 Video Games Dominating the Streaming World">
+                            <div class="card-content">
+                                <span class="card-category">Entertainment</span>
+                                <h4 class="card-title">Top 10 Video Games Dominating the Streaming World</h4>
+                            </div>
+                        </a>
+
+                        <a href="entertainment.html#article4" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/5555.webp" alt="Behind the Scenes: A Look at the Latest Blockbuster TV Series">
+                            <div class="card-content">
+                                <span class="card-category">Entertainment</span>
+                                <h4 class="card-title">Behind the Scenes: A Look at the Latest Blockbuster TV Series</h4>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-submenu align-right" data-category="lifestyle">
+                <a href="lifestyle.html">Lifestyle <i class="fas fa-chevron-down"></i></a>
+                <div class="megamenu cols-3">
+                    <div class="megamenu-inner articles-grid">
+
+                        <a href="lifestyle.html#article1" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/6666.jpg" alt="Mastering the Art of Work-Life Balance in a Digital Age">
+                            <div class="card-content">
+                                <span class="card-category">Lifestyle</span>
+                                <h4 class="card-title">Mastering the Art of Work-Life Balance in a Digital Age</h4>
+                            </div>
+                        </a>
+
+                        <a href="lifestyle.html#article2" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/7777.jpg" alt="The Power of Digital Detox: Reclaiming Your Free Time">
+                            <div class="card-content">
+                                <span class="card-category">Lifestyle</span>
+                                <h4 class="card-title">The Power of Digital Detox: Reclaiming Your Free Time</h4>
+                            </div>
+                        </a>
+
+                        <a href="lifestyle.html#article3" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/8888.jpeg" alt="Simple Meditation Techniques for Beginners">
+                            <div class="card-content">
+                                <span class="card-category">Lifestyle</span>
+                                <h4 class="card-title">Simple Meditation Techniques for Beginners</h4>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-submenu align-right" data-category="news">
+                <a href="news.html">News <i class="fas fa-chevron-down"></i></a>
+                <div class="megamenu cols-2">
+                    <div class="megamenu-inner articles-grid">
+
+                        <a href="news.html#article1" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/9999.jpg" alt="Global Leaders Discuss Climate Change Policy at Summit">
+                            <div class="card-content">
+                                <span class="card-category">News</span>
+                                <h4 class="card-title">Global Leaders Discuss Climate Change Policy at Summit</h4>
+                            </div>
+                        </a>
+
+                        <a href="news.html#article2" class="article-card">
+                            <img src="https://image-cloud-server.netlify.app/11111.png" alt="Local Community Rallies to Save Historic Landmark">
+                            <div class="card-content">
+                                <span class="card-category">News</span>
+                                <h4 class="card-title">Local Community Rallies to Save Historic Landmark</h4>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+</header>
+
+  <main class="page" id="home">
+    <h1 class="page-title">business</h1>
+
+    <!-- TOP FEATURED 3 CARDS -->
+    <section class="featured-grid" aria-label="Featured posts">
+  
+      
+  
+      
+        <article class="featured-card"
+                 style="background-image:url('https://image-cloud-server.netlify.app/image_65963.jpg');">
+          <div class="featured-overlay"></div>
+          <div class="featured-content">
+            <div class="tag-row">
+              <span class="tag">business</span>
+              <span class="time">2026-08-04</span>
+            </div>
+            <h2 class="featured-title">
+              <a href="https://wolhun.github.io/local-experts/best-data-center-hvac-company-in-new-jersey-ranking.html">Best Data Center HVAC Company in New Jersey — 2026 Ranking</a>
+            </h2>
+          </div>
+        </article>
+      
+  
+      
+      
+        <article class="featured-card" style="background-image:url('https://via.placeholder.com/1200x900');">
+          <div class="featured-overlay"></div>
+          <div class="featured-content">
+            <div class="tag-row">
+              <span class="tag">business</span>
+              <span class="time"></span>
+            </div>
+            <h2 class="featured-title">No posts yet</h2>
+          </div>
+        </article>
+      
+        <article class="featured-card" style="background-image:url('https://via.placeholder.com/1200x900');">
+          <div class="featured-overlay"></div>
+          <div class="featured-content">
+            <div class="tag-row">
+              <span class="tag">business</span>
+              <span class="time"></span>
+            </div>
+            <h2 class="featured-title">No posts yet</h2>
+          </div>
+        </article>
+      
+  
+    </section>
+  
+  
+    <!-- CATEGORY TABS + 6 SMALL CARDS -->
+    <section class="section-tabs" id="posts" aria-label="Latest by category">
+  
+      <div class="tabs-row">
+        <div class="tab active"><a href="business.html">business</a></div>
+        <div class="tab"><a href="entertainment.html">Entertainment</a></div>
+        <div class="tab"><a href="fashion.html">Fashion</a></div>
+        <div class="tab"><a href="health.html">Health</a></div>
+        <div class="tab"><a href="technology.html">Technology</a></div>
+        <div class="tab"><a href="travel.html">Travel</a></div>
+        <div class="tab"><a href="business.html">Business</a></div>
+        <div class="tab"><a href="home-garden.html">Home &amp; Garden</a></div>
+        <div class="tab"><a href="news.html">News</a></div>
+      </div>
+  
+      
+  
+      <div class="small-cards-grid">
+        
+  
+        
+        
+          <article class="small-card" style="background-image:url('https://via.placeholder.com/800x1100');">
+            <div class="small-overlay"></div>
+            <div class="small-content">
+              <h3 class="small-title">No posts yet</h3>
+              <div class="small-meta">
+                <span class="cat">business</span><span class="dot">|</span><span></span>
+              </div>
+            </div>
+          </article>
+        
+          <article class="small-card" style="background-image:url('https://via.placeholder.com/800x1100');">
+            <div class="small-overlay"></div>
+            <div class="small-content">
+              <h3 class="small-title">No posts yet</h3>
+              <div class="small-meta">
+                <span class="cat">business</span><span class="dot">|</span><span></span>
+              </div>
+            </div>
+          </article>
+        
+          <article class="small-card" style="background-image:url('https://via.placeholder.com/800x1100');">
+            <div class="small-overlay"></div>
+            <div class="small-content">
+              <h3 class="small-title">No posts yet</h3>
+              <div class="small-meta">
+                <span class="cat">business</span><span class="dot">|</span><span></span>
+              </div>
+            </div>
+          </article>
+        
+          <article class="small-card" style="background-image:url('https://via.placeholder.com/800x1100');">
+            <div class="small-overlay"></div>
+            <div class="small-content">
+              <h3 class="small-title">No posts yet</h3>
+              <div class="small-meta">
+                <span class="cat">business</span><span class="dot">|</span><span></span>
+              </div>
+            </div>
+          </article>
+        
+          <article class="small-card" style="background-image:url('https://via.placeholder.com/800x1100');">
+            <div class="small-overlay"></div>
+            <div class="small-content">
+              <h3 class="small-title">No posts yet</h3>
+              <div class="small-meta">
+                <span class="cat">business</span><span class="dot">|</span><span></span>
+              </div>
+            </div>
+          </article>
+        
+          <article class="small-card" style="background-image:url('https://via.placeholder.com/800x1100');">
+            <div class="small-overlay"></div>
+            <div class="small-content">
+              <h3 class="small-title">No posts yet</h3>
+              <div class="small-meta">
+                <span class="cat">business</span><span class="dot">|</span><span></span>
+              </div>
+            </div>
+          </article>
+        
+      </div>
+  
+    </section>
+  
+  
+    <!-- LAST SECTION: 4 COLS -->
+    <section class="four-cols" id="latest" aria-label="Four column section">
+  
+      
+      
+      
+      
+      
+      
+  
+      <!-- 1st content col -->
+      <div class="col">
+        <h3 class="col-title">business</h3>
+  
+        
+      </div>
+  
+  
+      <!-- 2nd content col -->
+      <div class="col" id="politics">
+        <h3 class="col-title">business</h3>
+  
+        
+      </div>
+  
+  
+      <!-- 3 Ad col kept as-is -->
+      <div class="col">
+        <div class="ad-box">
+          <div class="ad-label">Advertisement</div>
+          <img src="https://image-cloud-server.netlify.app/spotify.png" alt="Ad placeholder">
+        </div>
+      </div>
+  
+  
+      <!-- 4th content col -->
+      <div class="col" id="travel">
+        <h3 class="col-title">business</h3>
+  
+        
+      </div>
+  
+    </section>
+  
+  </main>
+  
+  <div id="newsletter-modal" class="modal">
+    <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <h2>Add your email to our magazine newsletter</h2>
+        <p>
+            Get the latest articles, exclusive interviews, and trends delivered straight to your inbox.
+            Subscribe now to stay updated with the GH News magazine.
+        </p>
+        <form id="subscribe-form" class="modal-form">
+            <input type="email" id="email-input" placeholder="email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+        <div id="success-message" class="success-message">
+            Thank you for subscribing! Please check your email inbox to confirm your address.
+        </div>
+    </div>
+</div>
+  <!-- FOOTER (ten sam co na stronie artykułu) -->
+  <footer>
+    <div class="footer-container">
+
+        <div>
+            <h3>About us</h3>
+            <div class="footer-brand">Newsboard</div>
+            <p>Your source for the lifestyle news. This demo is crafted specifically to exhibit the use of the theme as a lifestyle site. Visit our main page for more demos.</p>
+            <p>We're accepting new partnerships right now.</p>
+            <a href="contact.html" class="contact-btn-footer">Contact Us</a>
+        </div>
+
+        <div>
+            <h3>Our picks</h3>
+        
+            <div class="footer-item">
+                <img class="footer-thumb" src="https://image-cloud-server.netlify.app/9999.jpg" alt="Global Leaders Discuss Climate Change Policy at Summit">
+                <div>
+                    <div class="footer-item-title">Global Leaders Discuss Climate Change Policy at Summit</div>
+                </div>
+            </div>
+        
+            <div class="footer-item">
+                <img class="footer-thumb" src="https://image-cloud-server.netlify.app/333.webp" alt="Hidden Gems of the Mediterranean Coast">
+                <div>
+                    <div class="footer-item-title">Hidden Gems of the Mediterranean Coast</div>
+                </div>
+            </div>
+        
+            <div class="footer-item">
+                <img class="footer-thumb" src="https://image-cloud-server.netlify.app/99.jpg" alt="Understanding Next-Gen Cybersecurity Threats">
+                <div>
+                    <div class="footer-item-title">Understanding Next-Gen Cybersecurity Threats</div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h3>Categories</h3>
+            <ul class="footer-tags-list">
+                <li><a href="home-garden.html">Home &amp; Garden</a></li>
+                <li><a href="business.html">Business</a></li>
+                <li><a href="technology.html">Technology</a></li>
+                <li><a href="travel.html">Travel</a></li>
+                <li><a href="health.html">Health</a></li>
+                <li><a href="fashion.html">Fashion</a></li>
+                <li><a href="entertainment.html">Entertainment</a></li>
+                <li><a href="lifestyle.html">Lifestyle</a></li>
+                <li><a href="news.html">News</a></li>
+            
+            </ul>
+        </div>
+
+    </div>
+    <div class="footer-bottom-bar">
+        <div class="footer-bottom-inner">
+            <div>
+                2025 © All Rights Reserved
+            </div>
+            <div class="footer-bottom-links">
+                <a href="index.html">Home</a>
+                <a href="#">About us</a>
+                <a href="#">Our Team</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <script>
+    // Mobile toggle main nav
+    document.getElementById('menu-icon').addEventListener('click', function () {
+      document.getElementById('nav-links').classList.toggle('active');
+    });
+
+    // Mobile toggle sticky nav
+    document.getElementById('sticky-menu-icon').addEventListener('click', function () {
+      document.getElementById('sticky-nav-list').classList.toggle('active');
+    });
+
+    // Sticky show/hide
+    document.addEventListener("DOMContentLoaded", function () {
+      const stickyMenu = document.getElementById("sticky-menu");
+      const scrollThreshold = 250;
+
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > scrollThreshold) {
+          stickyMenu.classList.add("sticky-active");
+        } else {
+          stickyMenu.classList.remove("sticky-active");
+        }
+      });
+    });
+
+    // Funkcja do modala
+document.addEventListener("DOMContentLoaded", function() {
+    const modal = document.getElementById("newsletter-modal");
+    const openBtn = document.getElementById("open-modal-btn"); // Przycisk "Subscribe" w nav
+    const closeBtn = document.querySelector(".modal-close");
+    const form = document.getElementById("subscribe-form");
+    const successMessage = document.getElementById("success-message");
+    const emailInput = document.getElementById("email-input"); // Pole input
+
+    if (openBtn) {
+         // 1. Otwieranie modala
+        openBtn.onclick = function() {
+            modal.style.display = "block";
+            form.style.display = "flex"; // Pokaż formularz (używa display: flex z CSS)
+            successMessage.style.display = "none"; // Ukryj komunikat sukcesu
+            
+            // Czyści pole email przy otwarciu
+            if (emailInput) {
+                emailInput.value = '';
+            }
+        }
+    }
+   
+    // 2. Zamykanie modala przy kliknięciu "x"
+    if (closeBtn) {
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+    }
+    
+    // 3. Zamykanie modala przy kliknięciu poza nim
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // 4. Obsługa formularza (tylko symulacja)
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Zatrzymaj domyślne wysyłanie formularza
+            
+            // Walidacja (prosta, sprawdzenie czy pole nie jest puste)
+            if (emailInput.value.trim() === "") {
+                alert("Proszę podać poprawny adres e-mail.");
+                return;
+            }
+
+            // Symulacja wysłania
+            form.style.display = "none"; // Ukryj formularz
+            successMessage.style.display = "block"; // Pokaż komunikat sukcesu
+            
+            // Opcjonalnie: automatyczne zamknięcie modala po 3 sekundach
+            setTimeout(() => {
+                 modal.style.display = "none";
+            }, 3000);
+        });
+    }
+});
+  </script>
+
+</body>
+</html>
